@@ -1,4 +1,4 @@
-use LSM
+ï»¿use LSM
 select * from zipcode
 
 sp_help exam
@@ -42,93 +42,93 @@ alter column seq int
 alter table neis
 alter column  nchar(5)
 alter table neis
-alter column ÇĞ±³¸í nchar(25)
+alter column í•™êµëª… nchar(25)
 alter table neis
-alter column ÇĞ±³¾à¾î¸í nchar(25)
+alter column í•™êµì•½ì–´ëª… nchar(25)
 alter table neis
-alter column ¿ìÆí¹øÈ£ int
+alter column ìš°í¸ë²ˆí˜¸ int
 alter table neis
-alter column ÁÖ¼Ò nvarchar(40)
+alter column ì£¼ì†Œ nvarchar(40)
 alter table neis
-alter column ÀüÈ­¹øÈ£ char(12)
+alter column ì „í™”ë²ˆí˜¸ char(12)
 
-select max(len(ÁÖ¼Ò))from neis
-select max(len(ÀüÈ­¹øÈ£))from neis
+select max(len(ì£¼ì†Œ))from neis
+select max(len(ì „í™”ë²ˆí˜¸))from neis
 
 alter table exam_emp
-alter column °í±³Á¹¾÷ÀÏÀÚ datetime
+alter column ê³ êµì¡¸ì—…ì¼ì datetime
 
 alter table exam
-alter column ºÎ¼­ nchar(8)
+alter column ë¶€ì„œ nchar(8)
 alter table exam
-alter column ¼º¸í nchar(6)
+alter column ì„±ëª… nchar(6)
 alter table exam
-alter column ÇĞ·Â nchar(8)
+alter column í•™ë ¥ nchar(8)
 alter table exam
-alter column ¿µ¾î tinyint
+alter column ì˜ì–´ tinyint
 alter table exam
-alter column ¼öÇĞ tinyint
+alter column ìˆ˜í•™ tinyint
 alter table exam
-alter column ÀüÇü±¸ºĞ nchar(4)
+alter column ì „í˜•êµ¬ë¶„ nchar(4)
 
 alter table exam_emp
-alter column ÀüÈ­¹øÈ£ nchar(14)
+alter column ì „í™”ë²ˆí˜¸ nchar(14)
 alter table exam_emp
-alter column ºñ»ó¿¬¶ôÃ³ nchar(14)
+alter column ë¹„ìƒì—°ë½ì²˜ nchar(14)
 alter table exam_emp
-alter column ÇÕ°İ¿©ºÎ bit
-
-alter table exam_emp
-alter column  ¿ìÆí¹øÈ£ int
+alter column í•©ê²©ì—¬ë¶€ bit
 
 alter table exam_emp
-alter column Àû¿ë±¸ºĞ nchar(5)
+alter column  ìš°í¸ë²ˆí˜¸ int
 
 alter table exam_emp
-alter column °í±³ÄÚµå char(10)
+alter column ì ìš©êµ¬ë¶„ nchar(5)
+
+alter table exam_emp
+alter column ê³ êµì½”ë“œ char(10)
 
 
 
---ÄÃ·³ ÀÌ¸§ ¹Ù²Ù±â
-SELECT ¼º¸í AS ÀÌ¸§, ºÎ¼­  AS '(ÆÀ)' from exam 
+--ì»¬ëŸ¼ ì´ë¦„ ë°”ê¾¸ê¸°
+SELECT ì„±ëª… AS ì´ë¦„, ë¶€ì„œ  AS '(íŒ€)' from exam 
 
---º¯¼ö ¼±¾ğ
+--ë³€ìˆ˜ ì„ ì–¸
 DECLARE @id INT, @name CHAR(10)
 SET @id = 0
-SET @name = 'ÀÌ¼±¹Î'
+SET @name = 'ì´ì„ ë¯¼'
 SELECT @id, @name
 
---SELECT¿¡¼­ ÀÚ·áÇü ¹Ù²Ù±â
+--SELECTì—ì„œ ìë£Œí˜• ë°”ê¾¸ê¸°
 select * from neis
-SELECT ÁÖ¼Ò FROM neis
-SELECT ÁÖ¼Ò, CONVERT(CHAR(4),ÁÖ¼Ò) as 'ÁÙÀÎÁÖ¼Ò' FROM neis --ÀÚ·á±æÀÌ ¹× Çü º¯È¯
-SELECT ÁÖ¼Ò, SUBSTRING(ÁÖ¼Ò,1,2) as 'ÁÙÀÎÁÖ¼Ò' FROM neis -- ÀÚ·á±æÀÌ ¸¸ º¯È¯
+SELECT ì£¼ì†Œ FROM neis
+SELECT ì£¼ì†Œ, CONVERT(CHAR(4),ì£¼ì†Œ) as 'ì¤„ì¸ì£¼ì†Œ' FROM neis --ìë£Œê¸¸ì´ ë° í˜• ë³€í™˜
+SELECT ì£¼ì†Œ, SUBSTRING(ì£¼ì†Œ,1,2) as 'ì¤„ì¸ì£¼ì†Œ' FROM neis -- ìë£Œê¸¸ì´ ë§Œ ë³€í™˜
 
---¿¬»êÇÔ¼ö
-SELECT FLOOR(29.9),FLOOR(29.1),FLOOR(29.25) --¼Ò¼öÁ¡ ³»¸²
-SELECT CEILING(29.9),CEILING(29.1),CEILING(29.25) --¼Ò¼öÁ¡ ¿Ã¸²
-SELECT ROUND(29.1,0), ROUND(29.9,0), ROUND(29.953,1), round(29,-1) --¼Ò¼öÁ¡ ÀÚ¸®¼ö ¹İ¿Ã¸².
-SELECT ABS(-123),ABS(123) --Àı´ë°ª
+--ì—°ì‚°í•¨ìˆ˜
+SELECT FLOOR(29.9),FLOOR(29.1),FLOOR(29.25) --ì†Œìˆ˜ì  ë‚´ë¦¼
+SELECT CEILING(29.9),CEILING(29.1),CEILING(29.25) --ì†Œìˆ˜ì  ì˜¬ë¦¼
+SELECT ROUND(29.1,0), ROUND(29.9,0), ROUND(29.953,1), round(29,-1) --ì†Œìˆ˜ì  ìë¦¬ìˆ˜ ë°˜ì˜¬ë¦¼.
+SELECT ABS(-123),ABS(123) --ì ˆëŒ€ê°’
 SELECT COS(RADIANS(60)), SIN(90),TAN(45) --sin,cos,tan
 SELECT LOG10(10) --log
-SELECT SQUARE(2), SQRT(4), PI() --Á¦°ö, ·çÆ®, ÆÄÀÌ
+SELECT SQUARE(2), SQRT(4), PI() --ì œê³±, ë£¨íŠ¸, íŒŒì´
 
---¹®ÀÚÇÔ¼ö
-SELECT 'ÀÌ'+'¼±' + '¹Î'
-SELECT ASCII('ÀÌ'),ASCII('A')
+--ë¬¸ìí•¨ìˆ˜
+SELECT 'ì´'+'ì„ ' + 'ë¯¼'
+SELECT ASCII('ì´'),ASCII('A')
 SELECT CHAR(65)
-SELECT REPLACE('È«±æµ¿','µ¿','¶Ë') --±ÛÀÚ ±³Ã¼
-SELECT REPLICATE('ÀÌ¼±¹Î',4) --´Ü¾î ¹İº¹
-SELECT REVERSE('ÀÌ¼±¹Î') --´Ü¾î ¹İ´ë·Î
-SELECT LEFT('ÀÌ¼±¹Î',1),RIGHT('ÀÌ¼±¹Î',2)
-SELECT SUBSTRING('ÇÑ±ÛABCDµ¥ÀÌÅ¸',1,2) -- x¿¡¼­ y±îÁö ´Ü¾îÃâ·Â
-SELECT SUBSTRING('ÇÑ±ÛABCDµ¥ÀÌÅ¸',3,3)
-SELECT DIFFERENCE('ABCD','SDF'), DIFFERENCE('ÇÑ±Û','¼±¹Î') --´Ü¾îÀÇ ºñ½ÁÇÑ Á¡À» Ã£´Â ÇÔ¼ö(4°¡ °¡Àå ºñ½ÁÇÑ ´Ü¾î¶ó´Â ¶æ) ÀÎµ¥ ÇÑ±Û¿¡¼­´Â ¹«¿ëÁö¹°ÀÌ´Ù.
-SELECT STUFF('ÀÌ¼±¹Î',2,2,'±æµ¿'),STUFF('ÀÌ¼±¹Î',2,1,'±æµ¿') --xºÎÅÍ y±îÁö ´Ü¾î¸¦ Áö¿ì°í »õ·Î¿î ´Ü¾î Ãß°¡
+SELECT REPLACE('í™ê¸¸ë™','ë™','ë˜¥') --ê¸€ì êµì²´
+SELECT REPLICATE('ì´ì„ ë¯¼',4) --ë‹¨ì–´ ë°˜ë³µ
+SELECT REVERSE('ì´ì„ ë¯¼') --ë‹¨ì–´ ë°˜ëŒ€ë¡œ
+SELECT LEFT('ì´ì„ ë¯¼',1),RIGHT('ì´ì„ ë¯¼',2)
+SELECT SUBSTRING('í•œê¸€ABCDë°ì´íƒ€',1,2) -- xì—ì„œ yê¹Œì§€ ë‹¨ì–´ì¶œë ¥
+SELECT SUBSTRING('í•œê¸€ABCDë°ì´íƒ€',3,3)
+SELECT DIFFERENCE('ABCD','SDF'), DIFFERENCE('í•œê¸€','ì„ ë¯¼') --ë‹¨ì–´ì˜ ë¹„ìŠ·í•œ ì ì„ ì°¾ëŠ” í•¨ìˆ˜(4ê°€ ê°€ì¥ ë¹„ìŠ·í•œ ë‹¨ì–´ë¼ëŠ” ëœ») ì¸ë° í•œê¸€ì—ì„œëŠ” ë¬´ìš©ì§€ë¬¼ì´ë‹¤.
+SELECT STUFF('ì´ì„ ë¯¼',2,2,'ê¸¸ë™'),STUFF('ì´ì„ ë¯¼',2,1,'ê¸¸ë™') --xë¶€í„° yê¹Œì§€ ë‹¨ì–´ë¥¼ ì§€ìš°ê³  ìƒˆë¡œìš´ ë‹¨ì–´ ì¶”ê°€
 
---³¯Â¥ÇÔ¼ö
+--ë‚ ì§œí•¨ìˆ˜
 SELECT GETDATE()
-SELECT CONVERT(NVARCHAR(30),GETDATE(),2) --convertertÇÔ¼ö·Î ¼ıÀÚx¿¡ ÇØ´çÇÏ´Â À¯ÇüÀ» ³ªÅ¸³¿.
+SELECT CONVERT(NVARCHAR(30),GETDATE(),2) --convertertí•¨ìˆ˜ë¡œ ìˆ«ìxì— í•´ë‹¹í•˜ëŠ” ìœ í˜•ì„ ë‚˜íƒ€ëƒ„.
 SELECT CONVERT(NVARCHAR(30),GETDATE(),8)
 SELECT DATEPART(mm,GETDATE()), DATEPART(dd,GETDATE()), DATEPART(yy,GETDATE())
 SELECT DATENAME(DW,GETDATE()), DATENAME(MM,GETDATE()), DATENAME(dd,getdate())
@@ -136,63 +136,63 @@ SELECT DATENAME(DW,GETDATE()), DATENAME(MM,GETDATE()), DATENAME(dd,getdate())
 
 
 --NULL
-SELECT ¼º¸í FROM exam
-WHERE ºÎ¼­ IS NOT NULL
+SELECT ì„±ëª… FROM exam
+WHERE ë¶€ì„œ IS NOT NULL
 
-SELECT ¼º¸í FROM exam
-WHERE ºÎ¼­ is not NULL
+SELECT ì„±ëª… FROM exam
+WHERE ë¶€ì„œ is not NULL
 
---Á¤·Ä
-select ¼º¸í from exam
-order by ¼º¸í
-select ¼º¸í from exam
-order by ¼º¸í desc
+--ì •ë ¬
+select ì„±ëª… from exam
+order by ì„±ëª…
+select ì„±ëª… from exam
+order by ì„±ëª… desc
  
  --top
- select top 15 ¼º¸í, ¿µ¾î from exam
- order by ¿µ¾î desc
+ select top 15 ì„±ëª…, ì˜ì–´ from exam
+ order by ì˜ì–´ desc
  
- select top 15 with ties ¼º¸í, ¿µ¾î from exam
- order by ¿µ¾î desc
+ select top 15 with ties ì„±ëª…, ì˜ì–´ from exam
+ order by ì˜ì–´ desc
 
  --in
- select ¼º¸í ,¿µ¾î from exam
- where ¿µ¾î in (99,80,55)
+ select ì„±ëª… ,ì˜ì–´ from exam
+ where ì˜ì–´ in (99,80,55)
 
  
- select ¼º¸í ,¿µ¾î from exam
- where ¿µ¾î  = 99 or ¿µ¾î  = 80 or ¿µ¾î  = 55
+ select ì„±ëª… ,ì˜ì–´ from exam
+ where ì˜ì–´  = 99 or ì˜ì–´  = 80 or ì˜ì–´  = 55
 
 --%,_,[],[^]
 begin tran
 update exam
-set ¼º¸í = RTRIM(¼º¸í)
+set ì„±ëª… = RTRIM(ì„±ëª…)
 rollback
 sp_help exam_emp
 
 select * from exam
---±è±æµ¿
-select ¼º¸í from exam
-where ¼º¸í like '__µ¿' --exam Å¸ÀÔ¿¡ ºó°ø°£¿¡´Â null°ªÀÌ Á¸Àç
+--ê¹€ê¸¸ë™
+select ì„±ëª… from exam
+where ì„±ëª… like '__ë™' --exam íƒ€ì…ì— ë¹ˆê³µê°„ì—ëŠ” nullê°’ì´ ì¡´ì¬
 
-select ¼º¸í from exam
-where RTRIM(¼º¸í) like '__µ¿'
+select ì„±ëª… from exam
+where RTRIM(ì„±ëª…) like '__ë™'
 
-select ¼º¸í from exam
-where RTRIM(¼º¸í) like '±è_'
+select ì„±ëª… from exam
+where RTRIM(ì„±ëª…) like 'ê¹€_'
 
-select ¼º¸í from exam
-where RTRIM(¼º¸í) like '±è__'
+select ì„±ëª… from exam
+where RTRIM(ì„±ëª…) like 'ê¹€__'
 
-select ¼º¸í from exam
-where ¼º¸í like '±è%'
+select ì„±ëª… from exam
+where ì„±ëª… like 'ê¹€%'
 
-select ¼º¸í from exam
-where ¼º¸í like '%±è'
+select ì„±ëª… from exam
+where ì„±ëª… like '%ê¹€'
 
 
-select ¼º¸í from exam
-where ¼º¸í like '%±è%'
+select ì„±ëª… from exam
+where ì„±ëª… like '%ê¹€%'
 
 select PATINDEX('%Mi%','James Mike')
 
@@ -202,199 +202,199 @@ select PATINDEX('M[^C]%','Mike')
 
 select PATINDEX('M[^C]%','M')
 
---distinct(Áßº¹Çà Á¦°Å)
-select distinct ¿µ¾î from exam
-order by ¿µ¾î desc
+--distinct(ì¤‘ë³µí–‰ ì œê±°)
+select distinct ì˜ì–´ from exam
+order by ì˜ì–´ desc
 
 
---select ¿¬»ê
-select ºÎ¼­ from exam_emp
-group by ºÎ¼­
+--select ì—°ì‚°
+select ë¶€ì„œ from exam_emp
+group by ë¶€ì„œ
 
-select b.ºÎ¼­, count(*) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-where a.¿µ¾î >=60
-group by b.ºÎ¼­
+select b.ë¶€ì„œ, count(*) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+where a.ì˜ì–´ >=60
+group by b.ë¶€ì„œ
 
 
 
---rollup -------------¾Õ¿¡ ±×·ìÀ» ÅëÇÕÇÏ¿© °è»ê ÇÔ.
+--rollup -------------ì•ì— ê·¸ë£¹ì„ í†µí•©í•˜ì—¬ ê³„ì‚° í•¨.
 
 select *from exam_emp
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ,avg(a.¿µ¾î) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ºÎ¼­,b.ÀüÇü±¸ºĞ
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„,avg(a.ì˜ì–´) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„
 
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ,avg(isnull(a.¿µ¾î, 0)) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ºÎ¼­,b.ÀüÇü±¸ºĞ
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„,avg(isnull(a.ì˜ì–´, 0)) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„
 
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ,avg(a.¿µ¾î) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ºÎ¼­,b.ÀüÇü±¸ºĞ
-with rollup------------- ºÎ¼­ ±âÁØÀ¸·Î ¿µ¾î Æò±ÕÀ» µû·Î ±¸ÇÏ°í, ÀüÃ¼ ¿µ¾î Æò±Õµµ ±¸ÇÔ.
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„,avg(a.ì˜ì–´) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„
+with rollup------------- ë¶€ì„œ ê¸°ì¤€ìœ¼ë¡œ ì˜ì–´ í‰ê· ì„ ë”°ë¡œ êµ¬í•˜ê³ , ì „ì²´ ì˜ì–´ í‰ê· ë„ êµ¬í•¨.
 
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ,avg(a.¿µ¾î) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ÀüÇü±¸ºĞ,b.ºÎ¼­
-with rollup------------- ÀüÇü±¸ºĞ ±âÁØÀ¸·Î ¿µ¾î Æò±ÕÀ» µû·Î ±¸ÇÏ°í, ÀüÃ¼ ¿µ¾î Æò±Õµµ ±¸ÇÔ.
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„,avg(a.ì˜ì–´) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ì „í˜•êµ¬ë¶„,b.ë¶€ì„œ
+with rollup------------- ì „í˜•êµ¬ë¶„ ê¸°ì¤€ìœ¼ë¡œ ì˜ì–´ í‰ê· ì„ ë”°ë¡œ êµ¬í•˜ê³ , ì „ì²´ ì˜ì–´ í‰ê· ë„ êµ¬í•¨.
 
 
---cube   ---------------- ±×·ìÇÑ ¸ğµç °ÍÀ» ÅëÇÕ ÇÏ¿© °á°ú·Î Ç¥½Ã
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ,avg(a.¿µ¾î) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ÀüÇü±¸ºĞ,b.ºÎ¼­
-with cube -------------------------------- ÀüÇü±¸ºĞ ±âÁØÀ¸·Î ¿µ¾î Æò±ÕÀ» ±¸ÇÏ°í ¸Ç ³¡¿¡ Ç¥½Ã, ¶ÇÇÑ rollup°ú ´Ş¸® ºÎ¼­±âÁØÀ¸·Î ¿µ¾î Æò±ÕÀ» µû¶ó ¸¸µé¾îÁÜ.
+--cube   ---------------- ê·¸ë£¹í•œ ëª¨ë“  ê²ƒì„ í†µí•© í•˜ì—¬ ê²°ê³¼ë¡œ í‘œì‹œ
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„,avg(a.ì˜ì–´) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ì „í˜•êµ¬ë¶„,b.ë¶€ì„œ
+with cube -------------------------------- ì „í˜•êµ¬ë¶„ ê¸°ì¤€ìœ¼ë¡œ ì˜ì–´ í‰ê· ì„ êµ¬í•˜ê³  ë§¨ ëì— í‘œì‹œ, ë˜í•œ rollupê³¼ ë‹¬ë¦¬ ë¶€ì„œê¸°ì¤€ìœ¼ë¡œ ì˜ì–´ í‰ê· ì„ ë”°ë¼ ë§Œë“¤ì–´ì¤Œ.
 
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ,avg(a.¿µ¾î) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ºÎ¼­,b.ÀüÇü±¸ºĞ
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„,avg(a.ì˜ì–´) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„
 with cube
 
 
---cross join  -------------Å×ÀÌºíÀÇ ¸ğµç ÇàÀ» ¼­·Î ¿¬°áÇÔ.
+--cross join  -------------í…Œì´ë¸”ì˜ ëª¨ë“  í–‰ì„ ì„œë¡œ ì—°ê²°í•¨.
 --select * from exam join exam_emp 
 
 select * from exam cross join exam_emp 
 
 
---ÇÏÀ§ÁúÀÇ
-select ¼º¸í from exam
-where ¿µ¾î >= 90 and ¼º¸í in (select ¼º¸í from exam_emp)
+--í•˜ìœ„ì§ˆì˜
+select ì„±ëª… from exam
+where ì˜ì–´ >= 90 and ì„±ëª… in (select ì„±ëª… from exam_emp)
 
 
---»ó°üÇÏÀ§ÁúÀÇ
+--ìƒê´€í•˜ìœ„ì§ˆì˜
 select * from exam_emp
-select ¼º¸í, ¿µ¾î from exam
-where  ¼º¸í in (select ¼º¸í from exam_emp where exam.¼º¸í = exam_emp.¼º¸í)
-select ¼º¸í, ¿µ¾î from exam
-where  ¼º¸í in (select ¼º¸í from exam_emp)
+select ì„±ëª…, ì˜ì–´ from exam
+where  ì„±ëª… in (select ì„±ëª… from exam_emp where exam.ì„±ëª… = exam_emp.ì„±ëª…)
+select ì„±ëª…, ì˜ì–´ from exam
+where  ì„±ëª… in (select ì„±ëª… from exam_emp)
 
 --in
---exam¿¡ ¼º¸í 2°³ÀÎ 1¸íÀÌ ÀÖ¾î¼­ 211°³
-select ¼º¸í from exam
-where ¼º¸í in (select ¼º¸í from exam_emp)
-order by ¼º¸í
+--examì— ì„±ëª… 2ê°œì¸ 1ëª…ì´ ìˆì–´ì„œ 211ê°œ
+select ì„±ëª… from exam
+where ì„±ëª… in (select ì„±ëª… from exam_emp)
+order by ì„±ëª…
 
-select  a.¼º¸í from exam  a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-order by a.¼º¸í
+select  a.ì„±ëª… from exam  a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+order by a.ì„±ëª…
 
 --
 use LSM
-select a.¼º¸í, b.ºÎ¼­ from exam a right join exam_emp b
-on a.¼º¸í = b.¼º¸í
+select a.ì„±ëª…, b.ë¶€ì„œ from exam a right join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
 
---distinct°¡ Áßº¹µÈ °ÍÀ» Á¦°ÅÇØ¼­ 210°³
-select distinct a.¼º¸í from exam  a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-order by a.¼º¸í
+--distinctê°€ ì¤‘ë³µëœ ê²ƒì„ ì œê±°í•´ì„œ 210ê°œ
+select distinct a.ì„±ëª… from exam  a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+order by a.ì„±ëª…
 
-select ¼º¸í from exam
-order by ¼º¸í
+select ì„±ëª… from exam
+order by ì„±ëª…
 
-select ¼º¸í, count(¼º¸í) from exam
-where ¼º¸í in (select ¼º¸í from exam_emp)
-group by ¼º¸í
+select ì„±ëª…, count(ì„±ëª…) from exam
+where ì„±ëª… in (select ì„±ëª… from exam_emp)
+group by ì„±ëª…
 
 
-select  a.¼º¸í,count(a.¼º¸í)  from exam  a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by a.¼º¸í
+select  a.ì„±ëª…,count(a.ì„±ëª…)  from exam  a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by a.ì„±ëª…
 
-select ¼º¸í,count(¼º¸í) from exam
-group by ¼º¸í
-having count(¼º¸í) >=2
+select ì„±ëª…,count(ì„±ëª…) from exam
+group by ì„±ëª…
+having count(ì„±ëª…) >=2
 
---union  ---------------------------2°³ÀÇ select ¹®À» ÅëÇÕÇÔ.
+--union  ---------------------------2ê°œì˜ select ë¬¸ì„ í†µí•©í•¨.
 
-select ¼º¸í from exam
-select ¼º¸í from exam_emp
+select ì„±ëª… from exam
+select ì„±ëª… from exam_emp
 --263
-select ¼º¸í, count(*) from exam
-group by ¼º¸í
+select ì„±ëª…, count(*) from exam
+group by ì„±ëª…
 
 
 --798
-select ¼º¸í, count(*) from exam_emp
-group by ¼º¸í
+select ì„±ëª…, count(*) from exam_emp
+group by ì„±ëª…
 
 
---881--------------------------------------------------> count(*)ÀÇ µ¥ÀÌÅÍ¸¦ ´Ù¸£´Ù°í ÀÎ½ÄÇÏ¿© Áßº¹¿¡¼­ Á¦¿ÜÇØ 30¸íÀÌ ´õ Ãß°¡ µÈ °Í.
-select ¼º¸í, count(*) from exam
-group by ¼º¸í
+--881--------------------------------------------------> count(*)ì˜ ë°ì´í„°ë¥¼ ë‹¤ë¥´ë‹¤ê³  ì¸ì‹í•˜ì—¬ ì¤‘ë³µì—ì„œ ì œì™¸í•´ 30ëª…ì´ ë” ì¶”ê°€ ëœ ê²ƒ.
+select ì„±ëª…, count(*) from exam
+group by ì„±ëª…
 union
-select ¼º¸í, count(*) from exam_emp
-group by ¼º¸í
+select ì„±ëª…, count(*) from exam_emp
+group by ì„±ëª…
 
 --851 
-select ¼º¸í from exam
-group by ¼º¸í
+select ì„±ëª… from exam
+group by ì„±ëª…
 union
-select ¼º¸í from exam_emp
-group by ¼º¸í
+select ì„±ëª… from exam_emp
+group by ì„±ëª…
 
 --1
-select ¼º¸í, count(*) from exam
-group by ¼º¸í
+select ì„±ëª…, count(*) from exam
+group by ì„±ëª…
 having COUNT(*) >= 2
 --87
-select ¼º¸í, count(*) from exam_emp
-group by ¼º¸í
+select ì„±ëª…, count(*) from exam_emp
+group by ì„±ëª…
 having COUNT(*) >= 2
 
 --87
-select ¼º¸í, count(*) from exam
-group by ¼º¸í
+select ì„±ëª…, count(*) from exam
+group by ì„±ëª…
 having COUNT(*) >= 2
 union
-select ¼º¸í, count(*) from exam_emp
-group by ¼º¸í
+select ì„±ëª…, count(*) from exam_emp
+group by ì„±ëª…
 having COUNT(*) >= 2
 
 --210
-select ¼º¸í,COUNT(*) from exam
-where ¼º¸í in(select ¼º¸í from exam_emp)
-group by ¼º¸í
+select ì„±ëª…,COUNT(*) from exam
+where ì„±ëª… in(select ì„±ëª… from exam_emp)
+group by ì„±ëª…
 
 
 --53
-select ¼º¸í from exam
-where ¼º¸í not in(select ¼º¸í from exam_emp)
-group by ¼º¸í
+select ì„±ëª… from exam
+where ì„±ëª… not in(select ì„±ëª… from exam_emp)
+group by ì„±ëª…
 
 --588
-select ¼º¸í from exam_emp
-where ¼º¸í not in(select ¼º¸í from exam)
-group by ¼º¸í
+select ì„±ëª… from exam_emp
+where ì„±ëª… not in(select ì„±ëª… from exam)
+group by ì„±ëª…
 
 
---Å×ÀÌºí ¸¸µé±â
+--í…Œì´ë¸” ë§Œë“¤ê¸°
 create table SONMIN
 (
 	id int not null, name nchar(4)
 )
 
---ÄÃ·³ Ãß°¡
+--ì»¬ëŸ¼ ì¶”ê°€
 alter table SONMIN
 add adr nvarchar(30) not null
---ÄÃ·³ ¼öÁ¤
+--ì»¬ëŸ¼ ìˆ˜ì •
 alter table SONMIN
 alter column name nchar(4) not null
 
---ÄÃ·³ »èÁ¦
+--ì»¬ëŸ¼ ì‚­ì œ
 alter table SONMIN
 drop column adr
---Å×ÀÌºí »èÁ¦
+--í…Œì´ë¸” ì‚­ì œ
 drop table SONMIN
 
---±âº»Å° Ãß°¡
---Å×ÀÌºí ¸¸µé‹š
+--ê¸°ë³¸í‚¤ ì¶”ê°€
+--í…Œì´ë¸” ë§Œë“¤ë–„
 create table SONMIN
 (
 	id int primary key, name nchar(4)
 )
---Å×ÀÌºí ÀÖÀ» ¶§
+--í…Œì´ë¸” ìˆì„ ë•Œ
 alter table SONMIN
 alter column id int not null
 alter table SONMIN
@@ -403,28 +403,28 @@ ADD constraint PK_ID primary key (id)
 
 
 
---Å×ÀÌºí °ª Ãß°¡
+--í…Œì´ë¸” ê°’ ì¶”ê°€
 BEGIN TRAN
-INSERT SONMIN VALUES (123, 'È«±æµ¿', '¼­¿ï')
+INSERT SONMIN VALUES (123, 'í™ê¸¸ë™', 'ì„œìš¸')
 ROLLBACK
 SELECT * FROM SONMIN
 
--- Å×ÀÌºí ¸¸µé ¸é¼­ ±âº» °ª ÀÚµ¿ Ãß°¡(DEFAULT) ¹× Áõ°¡°ª ÀÚµ¿ Ãß°¡(IDENTITY)
+-- í…Œì´ë¸” ë§Œë“¤ ë©´ì„œ ê¸°ë³¸ ê°’ ìë™ ì¶”ê°€(DEFAULT) ë° ì¦ê°€ê°’ ìë™ ì¶”ê°€(IDENTITY)
 CREATE TABLE SONMIN2
 (
-ID INT IDENTITY(1,1) PRIMARY KEY , NAME NCHAR(4) NOT NULL, ADR NVARCHAR(30) DEFAULT '¼­¿ï'
+ID INT IDENTITY(1,1) PRIMARY KEY , NAME NCHAR(4) NOT NULL, ADR NVARCHAR(30) DEFAULT 'ì„œìš¸'
 )
 
 
 SELECT * FROM SONMIN2
-INSERT SONMIN2 (NAME)VALUES ('È«±æµ¿')
-INSERT SONMIN2 VALUES ('È«±æµ¿',DEFAULT)
+INSERT SONMIN2 (NAME)VALUES ('í™ê¸¸ë™')
+INSERT SONMIN2 VALUES ('í™ê¸¸ë™',DEFAULT)
 
---Å×ÀÌºí ¼öÁ¤(alter)ÇØ¼­ ±âº»°ª ÀÚµ¿ Ãß°¡ ¹× Áõ°¡°ª ÀÚµ¿ Ãß°¡ ---------> ¾ÈµÈ´Ù.
+--í…Œì´ë¸” ìˆ˜ì •(alter)í•´ì„œ ê¸°ë³¸ê°’ ìë™ ì¶”ê°€ ë° ì¦ê°€ê°’ ìë™ ì¶”ê°€ ---------> ì•ˆëœë‹¤.
 
 
 
---timestamp   --------------- SQL¼­¹ö°¡ ÀÚµ¿À¸·Î µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÕ.
+--timestamp   --------------- SQLì„œë²„ê°€ ìë™ìœ¼ë¡œ ë°ì´í„°ë¥¼ ì…ë ¥í•©.
 create table times
 (
 id int identity primary key,timestamp
@@ -436,20 +436,20 @@ insert times (qty) values(2)
 
 select * from times
 
---IDENTITY, NULL,TIMESTAMP, DEFAULT·Î ÀÌ·ç¾îÁø Å×ÀÌºíÀº INSERT Å×ÀÌºí¸í DEFAULT VALUES·Î °ª Ãß°¡ °¡´É.
+--IDENTITY, NULL,TIMESTAMP, DEFAULTë¡œ ì´ë£¨ì–´ì§„ í…Œì´ë¸”ì€ INSERT í…Œì´ë¸”ëª… DEFAULT VALUESë¡œ ê°’ ì¶”ê°€ ê°€ëŠ¥.
 
 
-INSERT SONMIN2 (NAME) VALUES ('ÀÌ¼±¹Î')
-INSERT SONMIN2 (NAME) VALUES ('±è±æµ¿')
+INSERT SONMIN2 (NAME) VALUES ('ì´ì„ ë¯¼')
+INSERT SONMIN2 (NAME) VALUES ('ê¹€ê¸¸ë™')
 
 SELECT * FROM SONMIN2
 
 
---INSERT SELECT¹® 
-SELECT * INTO SONMIN3 FROM SONMIN2  -------------into´Â  °á°ú°ªÀ» »õ·Î¿î Å×ÀÌºíÀ» ¸¸µé¾î ÀúÀå
+--INSERT SELECTë¬¸ 
+SELECT * INTO SONMIN3 FROM SONMIN2  -------------intoëŠ”  ê²°ê³¼ê°’ì„ ìƒˆë¡œìš´ í…Œì´ë¸”ì„ ë§Œë“¤ì–´ ì €ì¥
 SELECT * FROM SONMIN3
-SELECT * INTO SONMIN2 FROM SONMIN3 --¿À·ù¹ß»ı(ÀÌ¹Ì Å×ÀÌºí Á¸Àç)À¸·Î INSEERT SELECT¹® »ç¿ë
-INSERT SONMIN2 SELECT NAME,ADR FROM SONMIN3 --------------------insert select »ç¿ë½Ã ÄÃ·³°ªÀ» ¸Â°Ô ÇØ¾ß ÇÑ´Ù.
+SELECT * INTO SONMIN2 FROM SONMIN3 --ì˜¤ë¥˜ë°œìƒ(ì´ë¯¸ í…Œì´ë¸” ì¡´ì¬)ìœ¼ë¡œ INSEERT SELECTë¬¸ ì‚¬ìš©
+INSERT SONMIN2 SELECT NAME,ADR FROM SONMIN3 --------------------insert select ì‚¬ìš©ì‹œ ì»¬ëŸ¼ê°’ì„ ë§ê²Œ í•´ì•¼ í•œë‹¤.
 
 --DELETE
 SELECT * FROM SONMIN3
@@ -461,22 +461,22 @@ COMMIT
 
 SELECT * FROM exam
 SELECT * FROM exam_emp
-SELECT ¼º¸í FROM exam WHERE ¼º¸í NOT IN  (SELECT ¼º¸í FROM exam_emp)
+SELECT ì„±ëª… FROM exam WHERE ì„±ëª… NOT IN  (SELECT ì„±ëª… FROM exam_emp)
 
 BEGIN TRAN
 DELETE EXAM
-WHERE ¼º¸í NOT IN (SELECT ¼º¸í FROM exam_emp)
+WHERE ì„±ëª… NOT IN (SELECT ì„±ëª… FROM exam_emp)
 ROLLBACK
 COMMIT
 
 BEGIN TRAN
 DELETE exam
-WHERE ¼º¸í IN (SELECT ¼º¸í FROM exam GROUP BY ¼º¸í HAVING COUNT(¼º¸í) >1)
+WHERE ì„±ëª… IN (SELECT ì„±ëª… FROM exam GROUP BY ì„±ëª… HAVING COUNT(ì„±ëª…) >1)
 COMMIT
 SELECT * FROM exam_emp
 
 
---TRUNCATE TABLE Å×ÀÌºí¿¡ ÀÖ´Â ¸ğµç µ¥ÀÌÅÍ ºü¸¥ »èÁ¦
+--TRUNCATE TABLE í…Œì´ë¸”ì— ìˆëŠ” ëª¨ë“  ë°ì´í„° ë¹ ë¥¸ ì‚­ì œ
 BEGIN TRAN
 TRUNCATE TABLE SONMIN2
 SELECT * FROM SONMIN2
@@ -486,37 +486,37 @@ COMMIT
 
 
 SELECT * FROM exam
-SELECT A.ºÎ¼­,A.¼º¸í FROM exam_emp A JOIN exam B
-ON A.¼º¸í = B.¼º¸í
-GROUP BY A.¼º¸í
+SELECT A.ë¶€ì„œ,A.ì„±ëª… FROM exam_emp A JOIN exam B
+ON A.ì„±ëª… = B.ì„±ëª…
+GROUP BY A.ì„±ëª…
 
 BEGIN TRAN
 UPDATE EXAM
-SET ºÎ¼­ = (SELECT ºÎ¼­ FROM exam_emp WHERE EXAM.¼º¸í =  exam_emp.¼º¸í)
+SET ë¶€ì„œ = (SELECT ë¶€ì„œ FROM exam_emp WHERE EXAM.ì„±ëª… =  exam_emp.ì„±ëª…)
 SELECT * FROM exam
 SELECT * FROM exam_emp
 UPDATE EXAM
-SET ÇĞ·Â = (SELECT ÇĞ·Â FROM exam_emp WHERE EXAM.¼º¸í =  exam_emp.¼º¸í)
+SET í•™ë ¥ = (SELECT í•™ë ¥ FROM exam_emp WHERE EXAM.ì„±ëª… =  exam_emp.ì„±ëª…)
 UPDATE EXAM
-SET ÀüÇü±¸ºĞ = (SELECT ÀüÇü±¸ºĞ FROM exam_emp WHERE EXAM.¼º¸í =  exam_emp.¼º¸í)
+SET ì „í˜•êµ¬ë¶„ = (SELECT ì „í˜•êµ¬ë¶„ FROM exam_emp WHERE EXAM.ì„±ëª… =  exam_emp.ì„±ëª…)
 COMMIT
 
 SP_HELP EXAM_EMP
 SELECT * FROM exam_emp
 BEGIN TRAN
 UPDATE exam_emp
-SET ÇÕ°İ¿©ºÎ = 0
-WHERE ¼º¸í NOT IN (SELECT ¼º¸í FROM EXAM WHERE ¿µ¾î >=60 AND ¼öÇĞ >=60)
+SET í•©ê²©ì—¬ë¶€ = 0
+WHERE ì„±ëª… NOT IN (SELECT ì„±ëª… FROM EXAM WHERE ì˜ì–´ >=60 AND ìˆ˜í•™ >=60)
 ROLLBACK
 COMMIT
 
-SELECT ¼º¸í FROM EXAM WHERE ¿µ¾î >=60 AND ¼öÇĞ >=60 ORDER BY ¼º¸í
-SELECT ¼º¸í FROM exam_emp WHERE ¼º¸í IN (SELECT ¼º¸í FROM EXAM WHERE ¿µ¾î >=60 AND ¼öÇĞ >=60) ORDER BY ¼º¸í
-SELECT ¼º¸í FROM exam_emp ORDER BY ¼º¸í
-SELECT ¼º¸í FROM EXAM WHERE ¿µ¾î >=60 AND ¼öÇĞ >=60 ORDER BY ¼º¸í
+SELECT ì„±ëª… FROM EXAM WHERE ì˜ì–´ >=60 AND ìˆ˜í•™ >=60 ORDER BY ì„±ëª…
+SELECT ì„±ëª… FROM exam_emp WHERE ì„±ëª… IN (SELECT ì„±ëª… FROM EXAM WHERE ì˜ì–´ >=60 AND ìˆ˜í•™ >=60) ORDER BY ì„±ëª…
+SELECT ì„±ëª… FROM exam_emp ORDER BY ì„±ëª…
+SELECT ì„±ëª… FROM EXAM WHERE ì˜ì–´ >=60 AND ìˆ˜í•™ >=60 ORDER BY ì„±ëª…
 
-SELECT ¼º¸í FROM EXAM WHERE ¼º¸í IN (SELECT ¼º¸í FROM exam_emp) ORDER BY ¼º¸í
-SELECT ¼º¸í FROM exam_emp WHERE ¼º¸í IN (SELECT ¼º¸í FROM exam) ORDER BY ¼º¸í
+SELECT ì„±ëª… FROM EXAM WHERE ì„±ëª… IN (SELECT ì„±ëª… FROM exam_emp) ORDER BY ì„±ëª…
+SELECT ì„±ëª… FROM exam_emp WHERE ì„±ëª… IN (SELECT ì„±ëª… FROM exam) ORDER BY ì„±ëª…
 
 
 --NULL
@@ -526,7 +526,7 @@ SELECT '1' + 2
 SELECT 'A' + NULL + 'B'
 
 
---±âº»Å° ¸¸µé±â
+--ê¸°ë³¸í‚¤ ë§Œë“¤ê¸°
 create table test1
 (
 id int constraint PK_ID primary key nonclustered
@@ -541,18 +541,18 @@ set id = 2
 where id =1
 
 
---±âº»Å° 2°³ ¸¸µé±â
+--ê¸°ë³¸í‚¤ 2ê°œ ë§Œë“¤ê¸°
 create table test2
 (
 id int not null, name nchar(4) not null,
 constraint PK_IdName primary key (id,name)
 )
 
-insert test2 values (1,'È«±æµ¿')
-insert test2 values (1,'È«±æµ¿')
+insert test2 values (1,'í™ê¸¸ë™')
+insert test2 values (1,'í™ê¸¸ë™')
 select * from test2
 
---°íÀ¯Á¦¾à(unique)
+--ê³ ìœ ì œì•½(unique)
 create table test3
 (
 id int constraint U_id unique
@@ -563,7 +563,7 @@ insert test3 values(1)
 insert test3 values(null)
 select * from test3
 
---identity Ãß°¡¼³¸í_---> Ã¥¿¡¼­´Â Áß°£ °ªÀ» Á¦°ÅÇÏ°í insertÇÏ¸é Áß°£°ªÀ» Ã¤¿ìÁö ¾Ê°í Áõ°¡ÇÑ´Ù°í Çß´Âµ¥ °³¼± µÈ °Í °°´Ù.
+--identity ì¶”ê°€ì„¤ëª…_---> ì±…ì—ì„œëŠ” ì¤‘ê°„ ê°’ì„ ì œê±°í•˜ê³  insertí•˜ë©´ ì¤‘ê°„ê°’ì„ ì±„ìš°ì§€ ì•Šê³  ì¦ê°€í•œë‹¤ê³  í–ˆëŠ”ë° ê°œì„  ëœ ê²ƒ ê°™ë‹¤.
 
 use LSM
 create table test4
@@ -573,24 +573,24 @@ id int identity(1,5)
 
 alter table test4 
 add name nchar(4)
-insert test4 (name) values('ÀÌ¼±¹Î')
+insert test4 (name) values('ì´ì„ ë¯¼')
 select * from test4
-insert test4 (name) values('ÀÌ3')
+insert test4 (name) values('ì´3')
 
 delete test4
 where id = 6
-insert test4 (name) values('ÀÌ4')
-insert test4 (name) values('ÀÌ5')
+insert test4 (name) values('ì´4')
+insert test4 (name) values('ì´5')
 
 
---ÀıÂ÷Àû ¹æ¹ı DEFAULT
+--ì ˆì°¨ì  ë°©ë²• DEFAULT
 create table test5
 (
 id int, city nchar(10) null
 )
 
 create default DFcity
-as '¼­¿ï'
+as 'ì„œìš¸'
 
 
 sp_bindefault DFcity, 'test5.city'
@@ -598,7 +598,7 @@ sp_bindefault DFcity, 'test5.city'
 insert test5 (id) values(2)
 select * from test5
 
---»ç¿ëÀÚ Á¤ÀÇ ÀÚ·áÇü
+--ì‚¬ìš©ì ì •ì˜ ìë£Œí˜•
 sp_addtype Tcity, 'nchar(10)'
 sp_bindefault DFcity, 'Tcity'
 create table test6
@@ -608,9 +608,9 @@ id int, city Tcity null
 insert test6 (id) values(1)
 select * from test6
 
---ÀıÂ÷Àû µğÆúÆ® Áö¿ì±â, Ç®±â
+--ì ˆì°¨ì  ë””í´íŠ¸ ì§€ìš°ê¸°, í’€ê¸°
 sp_unbindefault 'test5.city'
-drop default DFcity --Tcity°¡ »ç¿ëÁßÀÌ¶ó »èÁ¦ ¸øÇÔ.
+drop default DFcity --Tcityê°€ ì‚¬ìš©ì¤‘ì´ë¼ ì‚­ì œ ëª»í•¨.
 
 sp_unbindefault Tcity
 drop default DFcity 
@@ -624,69 +624,69 @@ drop table test6
 --check
 create table tst1
 (
-city nchar(10) check (city in ('¼­¿ï','´ëÀü','´ë±¸','ºÎ»ê','ÀÎÃµ'))
+city nchar(10) check (city in ('ì„œìš¸','ëŒ€ì „','ëŒ€êµ¬','ë¶€ì‚°','ì¸ì²œ'))
 )
 
-insert tst1 values ('¼­¿ï')
+insert tst1 values ('ì„œìš¸')
 select * from tst1
 
-insert tst1 values ('ºÎÃµ') --check ¶§¹®¿¡ ¿À·ù¹ß»ı
+insert tst1 values ('ë¶€ì²œ') --check ë•Œë¬¸ì— ì˜¤ë¥˜ë°œìƒ
 update tst1
-set city = 'ºÎÃµ'--check ¶§¹®¿¡ ¿À·ù¹ß»ı
+set city = 'ë¶€ì²œ'--check ë•Œë¬¸ì— ì˜¤ë¥˜ë°œìƒ
 
---rule(ÀıÂ÷Àû ¹æ¹ı)
+--rule(ì ˆì°¨ì  ë°©ë²•)
 create rule rcity
-as @city in ('¼­¿ï', '´ëÀü','´ë±¸','ºÎ»ê','ÀÎÃµ')
+as @city in ('ì„œìš¸', 'ëŒ€ì „','ëŒ€êµ¬','ë¶€ì‚°','ì¸ì²œ')
 create table tst2
 (city nchar(10)
 )
 sp_bindrule rcity, 'tst2.city'
 
-insert tst2 values ('¼­¿ï')
+insert tst2 values ('ì„œìš¸')
 select * from tst2
-insert tst2 values ('ºÎÃµ') -- rule ¶§¹®¿¡ ¿À·ù ¹ß»ı
+insert tst2 values ('ë¶€ì²œ') -- rule ë•Œë¬¸ì— ì˜¤ë¥˜ ë°œìƒ
 
-sp_unbindrule 'tst2.city' --rule ÇØÁ¦
+sp_unbindrule 'tst2.city' --rule í•´ì œ
 drop rule rcity
 
 
---ÂüÁ¶Å°
+--ì°¸ì¡°í‚¤
 
 select * from exam
 select * from exam_emp
 select * from neis
 
 alter table exam
-add ¼öÇè¹øÈ£ int
+add ìˆ˜í—˜ë²ˆí˜¸ int
 
 begin tran
 update exam
-set ¼öÇè¹øÈ£ = (select ¼öÇè¹øÈ£ from exam_emp where ¼º¸í = exam.¼º¸í)
+set ìˆ˜í—˜ë²ˆí˜¸ = (select ìˆ˜í—˜ë²ˆí˜¸ from exam_emp where ì„±ëª… = exam.ì„±ëª…)
 commit
 
 alter table exam
-add constraint FK_exam_emp_¼öÇè¹øÈ£ foreign key(¼öÇè¹øÈ£)
-references exam_emp (¼öÇè¹øÈ£)
+add constraint FK_exam_emp_ìˆ˜í—˜ë²ˆí˜¸ foreign key(ìˆ˜í—˜ë²ˆí˜¸)
+references exam_emp (ìˆ˜í—˜ë²ˆí˜¸)
 on update cascade
 on delete cascade
 
 sp_help exam_emp
 alter table exam_emp
-alter column ¼öÇè¹øÈ£ int not null
+alter column ìˆ˜í—˜ë²ˆí˜¸ int not null
 
 alter table exam_emp
-add constraint PK_¼öÇè¹øÈ£ primary key(¼öÇè¹øÈ£)
+add constraint PK_ìˆ˜í—˜ë²ˆí˜¸ primary key(ìˆ˜í—˜ë²ˆí˜¸)
 
 sp_help neis
 sp_help exam_emp
 alter table neis
-alter column ÇĞ±³ÄÚµå char(10) not null
+alter column í•™êµì½”ë“œ char(10) not null
 alter table neis
-add constraint PK_ÇĞ±³ÄÚµå primary key (ÇĞ±³ÄÚµå)
+add constraint PK_í•™êµì½”ë“œ primary key (í•™êµì½”ë“œ)
 
 alter table exam_emp
-add constraint FK_ÇĞ±³ÄÚµå foreign key (°í±³ÄÚµå)
-references neis(ÇĞ±³ÄÚµå)
+add constraint FK_í•™êµì½”ë“œ foreign key (ê³ êµì½”ë“œ)
+references neis(í•™êµì½”ë“œ)
 on update cascade
 on delete cascade
 
@@ -695,26 +695,26 @@ on delete cascade
 select * from neis
 select * from exam_emp
 
-select °í±³ÄÚµå from exam_emp
-where °í±³ÄÚµå not in (select ÇĞ±³ÄÚµå from neis)
+select ê³ êµì½”ë“œ from exam_emp
+where ê³ êµì½”ë“œ not in (select í•™êµì½”ë“œ from neis)
 
 
 select * from exam_emp
-where °í±³ÄÚµå = 'S100003175' or °í±³ÄÚµå = 'ZZZZZZZZ'
+where ê³ êµì½”ë“œ = 'S100003175' or ê³ êµì½”ë“œ = 'ZZZZZZZZ'
 
 select * from exam
-where ¼º¸í = 'ÃÖÁö¼º' or ¼º¸í = 'Á¤È¸¸²' --Á¤È¸¸² ¾øÀ½
+where ì„±ëª… = 'ìµœì§€ì„±' or ì„±ëª… = 'ì •íšŒë¦¼' --ì •íšŒë¦¼ ì—†ìŒ
 
 begin tran
 delete exam_emp
-where ¼º¸í = 'Á¤È¸¸²'
+where ì„±ëª… = 'ì •íšŒë¦¼'
 commit
 
-insert neis (ÇĞ±³ÄÚµå) values ('S100003175')--neis¿¡ Ãß°¡
+insert neis (í•™êµì½”ë“œ) values ('S100003175')--neisì— ì¶”ê°€
 
 alter table exam_emp
-add constraint FK_ÇĞ±³ÄÚµå foreign key (°í±³ÄÚµå)
-references neis(ÇĞ±³ÄÚµå)
+add constraint FK_í•™êµì½”ë“œ foreign key (ê³ êµì½”ë“œ)
+references neis(í•™êµì½”ë“œ)
 on update cascade
 on delete cascade
 		
@@ -723,31 +723,31 @@ on delete cascade
 declare @tst int, @tst2 char(20)
 --set @tst2 = '1'
 select @tst2 = 'a'
-print @tst2 --¹®ÀÚÇü¸¸ Ãâ·Â °¡´É
-select @tst = 10 --setÃ³·³ º¯¼ö ÃÊ±âÈ­ °¡´É
+print @tst2 --ë¬¸ìí˜•ë§Œ ì¶œë ¥ ê°€ëŠ¥
+select @tst = 10 --setì²˜ëŸ¼ ë³€ìˆ˜ ì´ˆê¸°í™” ê°€ëŠ¥
 select @tst
 
 select @tst2
 
---raiserror ¿À·ù¸Ş½ÃÁö Ãâ·Â
-raiserror('¿¡·¯¹ß»ı',10,1) --·Î±×¿¡ ±â·Ï ¾ÊÇÔ.
-raiserror('¿¡·¯¹ß»ı',10,1) with log --·Î±×¿¡ ±â·Ï.
-raiserror('ÀÔ·ÂÇÑ ¼ıÀÚ´Â %d ÀÔ´Ï´Ù.',10,1,45)
+--raiserror ì˜¤ë¥˜ë©”ì‹œì§€ ì¶œë ¥
+raiserror('ì—ëŸ¬ë°œìƒ',10,1) --ë¡œê·¸ì— ê¸°ë¡ ì•Ší•¨.
+raiserror('ì—ëŸ¬ë°œìƒ',10,1) with log --ë¡œê·¸ì— ê¸°ë¡.
+raiserror('ì…ë ¥í•œ ìˆ«ìëŠ” %d ì…ë‹ˆë‹¤.',10,1,45)
 
---sp_addmessage ¿À·ù¸Ş¼¼Áö Ãß°¡(¿À·ù¹øÈ£´Â 50000ÀÌ»ó)
-sp_addmessage 51105,16,'log is almost full', us_english,'true',replace -- ¿µ¾î ¹öÀü ºÎÅÍ Ãß°¡ÇØ¾ßÇÔ.
-exec sp_addmessage 51105, 16, '·Î±×°¡ °ÅÀÇ ´Ù Ã¡´Ù', default,'true',replace --Ç×»ó ·Î±×¿¡ ±â·Ï
-sp_dropmessage 51105 --¸Ş¼¼Áö »èÁ¦
+--sp_addmessage ì˜¤ë¥˜ë©”ì„¸ì§€ ì¶”ê°€(ì˜¤ë¥˜ë²ˆí˜¸ëŠ” 50000ì´ìƒ)
+sp_addmessage 51105,16,'log is almost full', us_english,'true',replace -- ì˜ì–´ ë²„ì „ ë¶€í„° ì¶”ê°€í•´ì•¼í•¨.
+exec sp_addmessage 51105, 16, 'ë¡œê·¸ê°€ ê±°ì˜ ë‹¤ ì°¼ë‹¤', default,'true',replace --í•­ìƒ ë¡œê·¸ì— ê¸°ë¡
+sp_dropmessage 51105 --ë©”ì„¸ì§€ ì‚­ì œ
 
 --if
 declare @a int, @b int
 set @a = 1
 set @b = 2
 if @a > @b 
-begin select 'a°¡ Å©´Ù.'
+begin select 'aê°€ í¬ë‹¤.'
 end
 else
-begin select 'b°¡ Å©´Ù.'
+begin select 'bê°€ í¬ë‹¤.'
 end
 
 --while
@@ -765,37 +765,37 @@ select @sum
 --case
 select * from exam_emp
 
-select ¼º¸í, case when ÇÕ°İ¿©ºÎ = 0 then 'ºÒÇÕ°İ' else 'ÇÕ°İ' end as 'ÇÕ°İ¿©ºÎ', ºÎ¼­ --case when ÇÕ°İ¿©ºÎ = 0 then 'ºÒÇÕ°İ' else 'ÇÕ°İ' end as 'ÇÕ°İ¿©ºÎ' case¹®
+select ì„±ëª…, case when í•©ê²©ì—¬ë¶€ = 0 then 'ë¶ˆí•©ê²©' else 'í•©ê²©' end as 'í•©ê²©ì—¬ë¶€', ë¶€ì„œ --case when í•©ê²©ì—¬ë¶€ = 0 then 'ë¶ˆí•©ê²©' else 'í•©ê²©' end as 'í•©ê²©ì—¬ë¶€' caseë¬¸
 from exam_emp
 
-select ¼º¸í, case when ÇÕ°İ¿©ºÎ = 0 then 'ºÒÇÕ°İ' else 'ÇÕ°İ' end as 'ÇÕ°İ¿©ºÎ', ºÎ¼­ --case when ÇÕ°İ¿©ºÎ = 0 then 'ºÒÇÕ°İ' else 'ÇÕ°İ' end as 'ÇÕ°İ¿©ºÎ' case¹®
+select ì„±ëª…, case when í•©ê²©ì—¬ë¶€ = 0 then 'ë¶ˆí•©ê²©' else 'í•©ê²©' end as 'í•©ê²©ì—¬ë¶€', ë¶€ì„œ --case when í•©ê²©ì—¬ë¶€ = 0 then 'ë¶ˆí•©ê²©' else 'í•©ê²©' end as 'í•©ê²©ì—¬ë¶€' caseë¬¸
 from exam_emp
-where ÇÕ°İ¿©ºÎ = 1
+where í•©ê²©ì—¬ë¶€ = 1
 
-select ¼º¸í, ¿µ¾î, ¼öÇĞ from exam
-where ¿µ¾î >= 60 and ¼öÇĞ >=60
+select ì„±ëª…, ì˜ì–´, ìˆ˜í•™ from exam
+where ì˜ì–´ >= 60 and ìˆ˜í•™ >=60
 
 
-select ¼º¸í, ¿µ¾î, ¼öÇĞ, case when ¿µ¾î>=60 and ¼öÇĞ >=60 then 'ÇÕ°İ' else 'ºÒÇÕ°İ' end as 'ÇÕ°İ¿©ºÎ' 
-from exam order by ÇÕ°İ¿©ºÎ desc, ¼º¸í
+select ì„±ëª…, ì˜ì–´, ìˆ˜í•™, case when ì˜ì–´>=60 and ìˆ˜í•™ >=60 then 'í•©ê²©' else 'ë¶ˆí•©ê²©' end as 'í•©ê²©ì—¬ë¶€' 
+from exam order by í•©ê²©ì—¬ë¶€ desc, ì„±ëª…
 
-select ¼öÇè¹øÈ£, ¼º¸í ,¿µ¾î, case when ¿µ¾î >= 90 then 'A' when ¿µ¾î >= 80 then 'B' else 'C' end as '¿µ¾îµî±Ş'
-from exam order by ¿µ¾î desc
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª… ,ì˜ì–´, case when ì˜ì–´ >= 90 then 'A' when ì˜ì–´ >= 80 then 'B' else 'C' end as 'ì˜ì–´ë“±ê¸‰'
+from exam order by ì˜ì–´ desc
 
---set rowcount n ---------------->select top¿Í ºñ½ÁÇÏ³ª insert/update/delete¹®¿¡µµ »ç¿ë °¡´É
+--set rowcount n ---------------->select topì™€ ë¹„ìŠ·í•˜ë‚˜ insert/update/deleteë¬¸ì—ë„ ì‚¬ìš© ê°€ëŠ¥
 set rowcount 5
 select * from exam
 
-set rowcount 0 --ÇØÁ¦
+set rowcount 0 --í•´ì œ
 select * from exam
 
 
 --nullif
-select nullif(2,3) --°°Áö ¾ÊÀ¸¸é 2·Î ¹İÈ¯
-select nullif(3,3) --ÂüÀÌ¸é NULL·Î ¹İÈ¯
+select nullif(2,3) --ê°™ì§€ ì•Šìœ¼ë©´ 2ë¡œ ë°˜í™˜
+select nullif(3,3) --ì°¸ì´ë©´ NULLë¡œ ë°˜í™˜
 
 
---coalesce  : nullÀÌ ¾Æ´Ñ Ã¹ ¹øÂ° °ªÀ» ¹İÈ¯
+--coalesce  : nullì´ ì•„ë‹Œ ì²« ë²ˆì§¸ ê°’ì„ ë°˜í™˜
 select coalesce(null,1,2)
 select coalesce(null,2,1)
 select coalesce(1,null,2)
@@ -804,254 +804,254 @@ select coalesce(2,1,1)
 select coalesce(3,2,1)
 select coalesce(null,null,null)
 
-------------------------------------------------------»öÀÎ ------------------------------------------------------------------
+------------------------------------------------------ìƒ‰ì¸ ------------------------------------------------------------------
 use LSM
 select * from exam_emp
 select * from neis
---create index exam_pk on exam (¼º¸í asc, ºÎ¼­ desc) --> ³ÍÅ¬·¯½ºÅÍ »öÀÎÀÌ ±âº»°ª
+--create index exam_pk on exam (ì„±ëª… asc, ë¶€ì„œ desc) --> ë„Œí´ëŸ¬ìŠ¤í„° ìƒ‰ì¸ì´ ê¸°ë³¸ê°’
 drop index exam.exam_pk
 sp_help exam
 
 create unique clustered index exam_pk2
-on exam (¼º¸í asc, ºÎ¼­ desc)  ----------> Å¬·¯½ºÅÍ·Î ¼¼ÆÃ
+on exam (ì„±ëª… asc, ë¶€ì„œ desc)  ----------> í´ëŸ¬ìŠ¤í„°ë¡œ ì„¸íŒ…
 
 select * from exam
-SET STATISTICS TIME ON --> ½ÇÇà ¼Óµµ ÃøÁ¤ ¼³Á¤
-SET STATISTICS IO ON --> i/o ¹ß»ı È®ÀÎ
+SET STATISTICS TIME ON --> ì‹¤í–‰ ì†ë„ ì¸¡ì • ì„¤ì •
+SET STATISTICS IO ON --> i/o ë°œìƒ í™•ì¸
 
 select * from exam
-where ¿µ¾î >= 50 and ¼öÇĞ >=50
+where ì˜ì–´ >= 50 and ìˆ˜í•™ >=50
 
-create index exam_pk on exam(¼º¸í asc, ¿µ¾î desc, ¼öÇĞ desc)
+create index exam_pk on exam(ì„±ëª… asc, ì˜ì–´ desc, ìˆ˜í•™ desc)
 drop index exam.exam_pk
 sp_help neis
 select * from neis
 select * from neis
-where ½Ãµµ±³À°Ã» = '°æ±âµµ'
-order by ÇĞ±³ÄÚµå
+where ì‹œë„êµìœ¡ì²­ = 'ê²½ê¸°ë„'
+order by í•™êµì½”ë“œ
 
 select * from exam_emp
---»öÀÎ ¸¸µå´Â ¼ø¼­
---Å¬·¯½ºÅÍ »öÀÎ
---³ÍÅ¬·¯½ºÅÍ »öÀÎ
+--ìƒ‰ì¸ ë§Œë“œëŠ” ìˆœì„œ
+--í´ëŸ¬ìŠ¤í„° ìƒ‰ì¸
+--ë„Œí´ëŸ¬ìŠ¤í„° ìƒ‰ì¸
 
---½Ãµµ±³À°Ã», ÇĞ±³¸í È®ÀÎ
-select ½Ãµµ±³À°Ã», ÇĞ±³¸í from neis --io¼ö75
-select ½Ãµµ±³À°Ã», ÇĞ±³¸í from neis --io¼ö75
-where ½Ãµµ±³À°Ã» = '°æ±âµµ'
---create clustered index schoolname on neis(½Ãµµ±³À°Ã», ÇĞ±³¸í) --> primary key ¼±¾ğÀ¸·Î ÀÚµ¿À¸·Î Å¬·¯½ºÅÍ »öÀÎÀÌ ¸¸µé¾îÁü.
-create index schoolname on neis(½Ãµµ±³À°Ã», ÇĞ±³¸í)
-select ½Ãµµ±³À°Ã», ÇĞ±³¸í from neis --io¼ö35!!!!
-select ½Ãµµ±³À°Ã», ÇĞ±³¸í from neis --io¼ö 7!!!!
-where ½Ãµµ±³À°Ã» = '°æ±âµµ'
+--ì‹œë„êµìœ¡ì²­, í•™êµëª… í™•ì¸
+select ì‹œë„êµìœ¡ì²­, í•™êµëª… from neis --ioìˆ˜75
+select ì‹œë„êµìœ¡ì²­, í•™êµëª… from neis --ioìˆ˜75
+where ì‹œë„êµìœ¡ì²­ = 'ê²½ê¸°ë„'
+--create clustered index schoolname on neis(ì‹œë„êµìœ¡ì²­, í•™êµëª…) --> primary key ì„ ì–¸ìœ¼ë¡œ ìë™ìœ¼ë¡œ í´ëŸ¬ìŠ¤í„° ìƒ‰ì¸ì´ ë§Œë“¤ì–´ì§.
+create index schoolname on neis(ì‹œë„êµìœ¡ì²­, í•™êµëª…)
+select ì‹œë„êµìœ¡ì²­, í•™êµëª… from neis --ioìˆ˜35!!!!
+select ì‹œë„êµìœ¡ì²­, í•™êµëª… from neis --ioìˆ˜ 7!!!!
+where ì‹œë„êµìœ¡ì²­ = 'ê²½ê¸°ë„'
 
 select * from exam
 select * from exam_emp
 
 sp_help exam_emp
 
---exam ¼öÇè¹øÈ£ primary Å° ¼³Á¤
+--exam ìˆ˜í—˜ë²ˆí˜¸ primary í‚¤ ì„¤ì •
 alter table exam
-alter column ¼öÇè¹øÈ£ int not null
+alter column ìˆ˜í—˜ë²ˆí˜¸ int not null
 
 alter table exam
-add constraint PK_exam_¼öÇè¹øÈ£ primary key(¼öÇè¹øÈ£)
+add constraint PK_exam_ìˆ˜í—˜ë²ˆí˜¸ primary key(ìˆ˜í—˜ë²ˆí˜¸)
 
 
---¼º¸í, ¼ºÀû, ÇÕ°İ¿©ºÎ Ãâ·Â
-select a.¼º¸í, ¿µ¾î, ¼öÇĞ, ÇÕ°İ¿©ºÎ from exam a join exam_emp b --io ÃÑ ÇÕ°è 17 + 4 = 21
-on a.¼º¸í = b.¼º¸í
+--ì„±ëª…, ì„±ì , í•©ê²©ì—¬ë¶€ ì¶œë ¥
+select a.ì„±ëª…, ì˜ì–´, ìˆ˜í•™, í•©ê²©ì—¬ë¶€ from exam a join exam_emp b --io ì´ í•©ê³„ 17 + 4 = 21
+on a.ì„±ëª… = b.ì„±ëª…
 
-create index examscore on exam(¿µ¾î desc, ¼öÇĞ desc, ¼º¸í asc)
-create index exam_emp_pass on exam_emp(ÇÕ°İ¿©ºÎ desc, ¼º¸í asc)
+create index examscore on exam(ì˜ì–´ desc, ìˆ˜í•™ desc, ì„±ëª… asc)
+create index exam_emp_pass on exam_emp(í•©ê²©ì—¬ë¶€ desc, ì„±ëª… asc)
 
-select a.¼º¸í, ¿µ¾î, ¼öÇĞ, ÇÕ°İ¿©ºÎ from exam a join exam_emp b --io ÃÑ ÇÕ°è 4 + 2 = 6 !!!!!!!
-on a.¼º¸í = b.¼º¸í
+select a.ì„±ëª…, ì˜ì–´, ìˆ˜í•™, í•©ê²©ì—¬ë¶€ from exam a join exam_emp b --io ì´ í•©ê³„ 4 + 2 = 6 !!!!!!!
+on a.ì„±ëª… = b.ì„±ëª…
 
-select a.¼º¸í, ¿µ¾î, ¼öÇĞ, ÇÕ°İ¿©ºÎ from exam a join exam_emp b --io ÃÑ ÇÕ°è 4 + 17 = 21 ??????????
-on a.¼öÇè¹øÈ£ = b.¼öÇè¹øÈ£
+select a.ì„±ëª…, ì˜ì–´, ìˆ˜í•™, í•©ê²©ì—¬ë¶€ from exam a join exam_emp b --io ì´ í•©ê³„ 4 + 17 = 21 ??????????
+on a.ìˆ˜í—˜ë²ˆí˜¸ = b.ìˆ˜í—˜ë²ˆí˜¸
 
 drop index exam.examscore
 drop index exam_emp.exam_emp_pass
-create index examscore on exam(¿µ¾î desc, ¼öÇĞ desc, ¼öÇè¹øÈ£ asc)
-create index exam_emp_pass on exam_emp(ÇÕ°İ¿©ºÎ desc, ¼öÇè¹øÈ£ asc)
+create index examscore on exam(ì˜ì–´ desc, ìˆ˜í•™ desc, ìˆ˜í—˜ë²ˆí˜¸ asc)
+create index exam_emp_pass on exam_emp(í•©ê²©ì—¬ë¶€ desc, ìˆ˜í—˜ë²ˆí˜¸ asc)
 
-select a.¼º¸í, ¿µ¾î, ¼öÇĞ, ÇÕ°İ¿©ºÎ from exam a join exam_emp b --io ÃÑ ÇÕ°è 4 + 17 = 21 ¶È°°´Ù???????????????????????????? 
-on a.¼öÇè¹øÈ£ = b.¼öÇè¹øÈ£
+select a.ì„±ëª…, ì˜ì–´, ìˆ˜í•™, í•©ê²©ì—¬ë¶€ from exam a join exam_emp b --io ì´ í•©ê³„ 4 + 17 = 21 ë˜‘ê°™ë‹¤???????????????????????????? 
+on a.ìˆ˜í—˜ë²ˆí˜¸ = b.ìˆ˜í—˜ë²ˆí˜¸
 
---@@trancount Æ®·£Àè¼Ç È½¼ö¸¦ ¼À
+--@@trancount íŠ¸ëœì­ì…˜ íšŸìˆ˜ë¥¼ ì…ˆ
 use LSM
 select * from tst1
 
 begin tran
 update tst1
-set city = 'ºÎ»ê'
-where city = '¼­¿ï'
+set city = 'ë¶€ì‚°'
+where city = 'ì„œìš¸'
 select @@TRANCOUNT -- 1
 commit
 select @@TRANCOUNT -- 0
 
 
---Æ®·£Àè¼Ç save tran
-insert tst1 values('´ëÀü')
+--íŠ¸ëœì­ì…˜ save tran
+insert tst1 values('ëŒ€ì „')
 
 
 begin tran
-save tran savepoint1 --¼¼ÀÌºê ÁöÁ¤1
+save tran savepoint1 --ì„¸ì´ë¸Œ ì§€ì •1
 delete tst1
-where city = '´ëÀü'
+where city = 'ëŒ€ì „'
 
-save tran savepoint2 --¼¼ÀÌºê ÁöÁ¤ 2
+save tran savepoint2 --ì„¸ì´ë¸Œ ì§€ì • 2
 delete tst1
-where city = 'ºÎ»ê'
+where city = 'ë¶€ì‚°'
 
-rollback tran savepoint1 --¼¼ÀÌºê ÁöÁ¤ 1·Î º¹±¸
+rollback tran savepoint1 --ì„¸ì´ë¸Œ ì§€ì • 1ë¡œ ë³µêµ¬
 select * from tst1
 
 
---Æ®·£Àè¼Ç Àá±İ Á¤º¸ º¸±â
+--íŠ¸ëœì­ì…˜ ì ê¸ˆ ì •ë³´ ë³´ê¸°
 sp_lock @@spid
 
-select DB_NAME(5), DB_NAME(1),DB_NAME(32767) --dbid µ¥ÀÌÅÍ º£ÀÌ½º ÀÌ¸§
+select DB_NAME(5), DB_NAME(1),DB_NAME(32767) --dbid ë°ì´í„° ë² ì´ìŠ¤ ì´ë¦„
 
 
 select OBJECT_NAME(1467152272)
 
---Æ®·£Àè¼Ç °í¸³È­ ¼öÁØ
+--íŠ¸ëœì­ì…˜ ê³ ë¦½í™” ìˆ˜ì¤€
 --read uncommitted < read committed < repeatable read < serializable
---read uncommitted (Æ®·£Àè¼Ç Áß¿¡µµ µ¥ÀÌÅÍ ÀĞÀ½)
--- read committed ÀÏ¹İÀûÀÎ Æ®·£Àè¼Ç
--- repeatable read : select¹®¿¡¼­´Â select ³¡³¯ ¶§ ±îÁö Àá±İÀÌÁö¸¸, ÀÌ °ÍÀ» ÇÏ¸é Æ®·£Àè¼ÇÀÌ ³¡³¯ ¶§ ±îÁö Àá±İÀ» À¯Áö
---  serializable : 1,2,4,5¶ó´Â Å°°ªÀÌ Á¸ÀçÇÏ¸é repeatable read¿¡¼­´Â 1,2,4,5 °ª¸¸ Àá±İÇÏÁö¸¸, serializableÀº ¾ø´Â °ª(3)µµ Àá±İÀ» À¯ÁöÇÑ´Ù.
---¿¹½Ã
---µ¥ÀÌºí ¼öÁ¤
+--read uncommitted (íŠ¸ëœì­ì…˜ ì¤‘ì—ë„ ë°ì´í„° ì½ìŒ)
+-- read committed ì¼ë°˜ì ì¸ íŠ¸ëœì­ì…˜
+-- repeatable read : selectë¬¸ì—ì„œëŠ” select ëë‚  ë•Œ ê¹Œì§€ ì ê¸ˆì´ì§€ë§Œ, ì´ ê²ƒì„ í•˜ë©´ íŠ¸ëœì­ì…˜ì´ ëë‚  ë•Œ ê¹Œì§€ ì ê¸ˆì„ ìœ ì§€
+--  serializable : 1,2,4,5ë¼ëŠ” í‚¤ê°’ì´ ì¡´ì¬í•˜ë©´ repeatable readì—ì„œëŠ” 1,2,4,5 ê°’ë§Œ ì ê¸ˆí•˜ì§€ë§Œ, serializableì€ ì—†ëŠ” ê°’(3)ë„ ì ê¸ˆì„ ìœ ì§€í•œë‹¤.
+--ì˜ˆì‹œ
+--ë°ì´ë¸” ìˆ˜ì •
 --select * from tst1
 --delete tst1
---where city = '´ëÀü'
---insert tst1 (city) values('¼­¿ï')
---insert tst1 (city) values('´ëÀü')
---insert tst1 (city) values('´ë±¸')
---insert tst1 (city) values('ºÎ»ê')
---insert tst1 (city) values('ÀÎÃµ')
+--where city = 'ëŒ€ì „'
+--insert tst1 (city) values('ì„œìš¸')
+--insert tst1 (city) values('ëŒ€ì „')
+--insert tst1 (city) values('ëŒ€êµ¬')
+--insert tst1 (city) values('ë¶€ì‚°')
+--insert tst1 (city) values('ì¸ì²œ')
 SET TRANSACTION ISOLATION LEVEL read committed
 begin tran
 update tst1
-set city = '´ë±¸'
-where city = '´ëÀü'
+set city = 'ëŒ€êµ¬'
+where city = 'ëŒ€ì „'
 SELECT @@TRANCOUNT
 rollback
 select * from tst1 with (readcommitted)
 
 sp_who
 
---ºä
---ºä ¸¸µé±â
+--ë·°
+--ë·° ë§Œë“¤ê¸°
 select * from exam_emp
 select * from neis
 
 create view neisView
 as
-select ÇĞ±³ÄÚµå, ÇĞ±³¸í, ÁÖ¼Ò, ÀüÈ­¹øÈ£ from neis
+select í•™êµì½”ë“œ, í•™êµëª…, ì£¼ì†Œ, ì „í™”ë²ˆí˜¸ from neis
 
 select * from neisView
 
 create view examview
 as
-select ¼öÇè¹øÈ£, ¼º¸í, ÇÕ°İ¿©ºÎ from exam_emp
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª…, í•©ê²©ì—¬ë¶€ from exam_emp
 select * from examview
 
 create view examview2
 as
-select ¼öÇè¹øÈ£, ¼º¸í, ÇÕ°İ¿©ºÎ,cast(ÁÖ¼Ò as nchar(6)) from exam_emp
-----ÄÃ·³ ÀÌ¸§ÀÌ ¾ø¾î¼­ ¿À·ù ¹ß»ı
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª…, í•©ê²©ì—¬ë¶€,cast(ì£¼ì†Œ as nchar(6)) from exam_emp
+----ì»¬ëŸ¼ ì´ë¦„ì´ ì—†ì–´ì„œ ì˜¤ë¥˜ ë°œìƒ
 
 
-create view examview2([¼öÇè¹øÈ£],[¼º¸í],[ÇÕ°İ¿©ºÎ],[ÁÖ¼Ò])
+create view examview2([ìˆ˜í—˜ë²ˆí˜¸],[ì„±ëª…],[í•©ê²©ì—¬ë¶€],[ì£¼ì†Œ])
 as
-select ¼öÇè¹øÈ£, ¼º¸í, ÇÕ°İ¿©ºÎ,cast(ÁÖ¼Ò as nchar(6)) from exam_emp
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª…, í•©ê²©ì—¬ë¶€,cast(ì£¼ì†Œ as nchar(6)) from exam_emp
 select * from examview2
 
 
---ºä °íÄ¡±â
+--ë·° ê³ ì¹˜ê¸°
 alter view neisView
 as
-select ÇĞ±³ÄÚµå, left(ÇĞ±³¸í,4) as ÇĞ±³¸í , ÁÖ¼Ò, ÀüÈ­¹øÈ£ from neis
+select í•™êµì½”ë“œ, left(í•™êµëª…,4) as í•™êµëª… , ì£¼ì†Œ, ì „í™”ë²ˆí˜¸ from neis
 select * from neisView
 
 alter view examview
 as
-select ¼öÇè¹øÈ£, ¼º¸í, ÇÕ°İ¿©ºÎ, ÁÖ¼Ò from exam_emp
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª…, í•©ê²©ì—¬ë¶€, ì£¼ì†Œ from exam_emp
 select * from examview
 
 create view dbo.examview
 as
-select ¼öÇè¹øÈ£, ¼º¸í, ÇÕ°İ¿©ºÎ, ÁÖ¼Ò from exam_emp
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª…, í•©ê²©ì—¬ë¶€, ì£¼ì†Œ from exam_emp
 
---ºä Áö¿ì±â
+--ë·° ì§€ìš°ê¸°
 drop view dbo.neisView
 drop view dbo.examview2
 
 sp_help examview
-sp_depends examview ---ÀÇÁ¸¼º °Ë»ç
+sp_depends examview ---ì˜ì¡´ì„± ê²€ì‚¬
 
 select * from exam_emp
-where ¼º¸í='È«±æµ¿'
+where ì„±ëª…='í™ê¸¸ë™'
 
--- ºäµ¥ÀÌÅÍ Ãß°¡
-insert examview values(1234,'È«±æµ¿',1,'Ãæ³²')
+-- ë·°ë°ì´í„° ì¶”ê°€
+insert examview values(1234,'í™ê¸¸ë™',1,'ì¶©ë‚¨')
 select * from examview
 
--- ºäµ¥ÀÌÅÍ ¼öÁ¤
+-- ë·°ë°ì´í„° ìˆ˜ì •
 update examview
-set ¼öÇè¹øÈ£ = 123456
-where ¼º¸í = 'È«±æµ¿'
+set ìˆ˜í—˜ë²ˆí˜¸ = 123456
+where ì„±ëª… = 'í™ê¸¸ë™'
 select * from examview
 
--- µÎ°³ Å×ÀÌºí Á¶ÀÎÇÑ °ÍÀ» ºä·Î ¸¸µé±â
+-- ë‘ê°œ í…Œì´ë¸” ì¡°ì¸í•œ ê²ƒì„ ë·°ë¡œ ë§Œë“¤ê¸°
 create view examview2
 as
-select a.¼öÇè¹øÈ£, a.¼º¸í, b.ÇÕ°İ¿©ºÎ, a.¿µ¾î, a.¼öÇĞ from exam a join exam_emp b
-on a.¼öÇè¹øÈ£ = b.¼öÇè¹øÈ£
+select a.ìˆ˜í—˜ë²ˆí˜¸, a.ì„±ëª…, b.í•©ê²©ì—¬ë¶€, a.ì˜ì–´, a.ìˆ˜í•™ from exam a join exam_emp b
+on a.ìˆ˜í—˜ë²ˆí˜¸ = b.ìˆ˜í—˜ë²ˆí˜¸
 select * from examview2
 
---with check option ºä ¹üÀ§ ¼³Á¤ Ã¼Å©
+--with check option ë·° ë²”ìœ„ ì„¤ì • ì²´í¬
 select * from exam_emp
 create view examview3
 as
-select ¼öÇè¹øÈ£, ¼º¸í, ÇÕ°İ¿©ºÎ from exam_emp
-where ÇÕ°İ¿©ºÎ = 1
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª…, í•©ê²©ì—¬ë¶€ from exam_emp
+where í•©ê²©ì—¬ë¶€ = 1
 
 select * from examview3
 update examview3
-set ÇÕ°İ¿©ºÎ = 0
-where ¼º¸í = 'È«±æµ¿'
+set í•©ê²©ì—¬ë¶€ = 0
+where ì„±ëª… = 'í™ê¸¸ë™'
 
 
 create view examview4
 as
-select ¼öÇè¹øÈ£, ¼º¸í, ÇÕ°İ¿©ºÎ from exam_emp
-where ÇÕ°İ¿©ºÎ = 1
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª…, í•©ê²©ì—¬ë¶€ from exam_emp
+where í•©ê²©ì—¬ë¶€ = 1
 with check option
 
 select * from examview4
 
 
 update examview4
-set ÇÕ°İ¿©ºÎ = 0
-where ¼º¸í = 'È«±æµ¿' --- ¼öÁ¤ÀÌ ¾ÈµÈ´Ù.
+set í•©ê²©ì—¬ë¶€ = 0
+where ì„±ëª… = 'í™ê¸¸ë™' --- ìˆ˜ì •ì´ ì•ˆëœë‹¤.
 
 select * from exam_emp
 
 update exam_emp
-set ÇÕ°İ¿©ºÎ = 1
-where ¼º¸í = 'È«±æµ¿'
+set í•©ê²©ì—¬ë¶€ = 1
+where ì„±ëª… = 'í™ê¸¸ë™'
 
 
---½Ã½ºÅÛ ºä
-select * from INFORMATION_SCHEMA.VIEWS  -------½Ã½ºÅÛ¿¡ ÀÖ´Â ºä¸¦ ºÒ·¯¿Â´Ù.
+--ì‹œìŠ¤í…œ ë·°
+select * from INFORMATION_SCHEMA.VIEWS  -------ì‹œìŠ¤í…œì— ìˆëŠ” ë·°ë¥¼ ë¶ˆëŸ¬ì˜¨ë‹¤.
 
 
---ÇÁ·Î½ÃÁ®
+--í”„ë¡œì‹œì ¸
 alter proc Psum
 @a int, @b int
 as
@@ -1064,17 +1064,17 @@ exec Psum 1000 , 13
 
 create proc test1
 as
-select ¼öÇè¹øÈ£, ¼º¸í from exam
-where ¿µ¾î >=60 and ¼öÇĞ >= 60
-order by ¼öÇè¹øÈ£
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª… from exam
+where ì˜ì–´ >=60 and ìˆ˜í•™ >= 60
+order by ìˆ˜í—˜ë²ˆí˜¸
 
 exec test1
 
-alter proc test1  --ÇÁ·Î½ÃÁ® ¼öÁ¤
+alter proc test1  --í”„ë¡œì‹œì ¸ ìˆ˜ì •
 as
-select ¼öÇè¹øÈ£, ¼º¸í from exam
-where ¿µ¾î >=60 and ¼öÇĞ >= 60
-order by ¼öÇè¹øÈ£
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª… from exam
+where ì˜ì–´ >=60 and ìˆ˜í•™ >= 60
+order by ìˆ˜í—˜ë²ˆí˜¸
 set nocount on
 
 exec test1
@@ -1083,8 +1083,8 @@ create proc test2
 @a int
 as
 set nocount on
-select ¼öÇè¹øÈ£, ¼º¸í from exam
-where ¿µ¾î >= @a
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª… from exam
+where ì˜ì–´ >= @a
 
 
 exec test2 90
@@ -1094,13 +1094,13 @@ alter proc test2
 @a int, @b int output
 as
 set nocount on
-select ¼öÇè¹øÈ£, ¼º¸í from exam
-where ¿µ¾î >= @a
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª… from exam
+where ì˜ì–´ >= @a
 select @b = @@ROWCOUNT
 
 declare @r int
 set @r = 0
-exec test2 80, @r output -- °ª ¹İÈ¯ ex) cÀÇ returnÇÏ°í ºñ½Á.
+exec test2 80, @r output -- ê°’ ë°˜í™˜ ex) cì˜ returní•˜ê³  ë¹„ìŠ·.
 select @r
 
 alter proc Psum
@@ -1112,51 +1112,51 @@ select @sum
 
 
 
-create proc test3 -----return »ç¿ë
+create proc test3 -----return ì‚¬ìš©
 @a int
 as
 set nocount on
-select ¼öÇè¹øÈ£, ¼º¸í from exam
-where ¿µ¾î >= @a
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª… from exam
+where ì˜ì–´ >= @a
 return @@rowcount
 
 declare @r int
 exec @r = test3 60
 select @r
 
---ÇÁ·Î½ºÁ® ¼­¹ö ½ÃÀÛ½Ã ÀÚµ¿ ½ÃÀÛ
+--í”„ë¡œìŠ¤ì ¸ ì„œë²„ ì‹œì‘ì‹œ ìë™ ì‹œì‘
 sp_procoption test1, startup, true
 
---ÇÁ·Î½ÃÀú°¡ ÀçÄÄÆÄÀÏ ÇÏµµ·Ï ½ÇÇà
+--í”„ë¡œì‹œì €ê°€ ì¬ì»´íŒŒì¼ í•˜ë„ë¡ ì‹¤í–‰
 alter proc test3
 @a int
-with recompile ---------------------------------- ½ÇÇà ÇÒ ¶§ ¸¶´Ù ÄÄÆÄÀÏ ½ÇÇà
+with recompile ---------------------------------- ì‹¤í–‰ í•  ë•Œ ë§ˆë‹¤ ì»´íŒŒì¼ ì‹¤í–‰
 as
 set nocount on
-select ¼öÇè¹øÈ£, ¼º¸í from exam
-where ¿µ¾î >= @a
+select ìˆ˜í—˜ë²ˆí˜¸, ì„±ëª… from exam
+where ì˜ì–´ >= @a
 return @@rowcount
 
 --	With recompile
-exec test1 with recompile -- ÄÄÆÄÀÏ ÈÄ ½ÇÇà
+exec test1 with recompile -- ì»´íŒŒì¼ í›„ ì‹¤í–‰
 
 
 
---Æ®¸®°Å
---Æ®¸®°Å ¸¸µé±â
+--íŠ¸ë¦¬ê±°
+--íŠ¸ë¦¬ê±° ë§Œë“¤ê¸°
 select * from exam
 select * from exam_emp
 
---exam_emp¿¡ Á¤º¸°¡ ÀÔ·ÂµÇ¸é ÀÚµ¿À¸·Î exam¿¡ µî·ÏÇÏ´Â Æ®¸®°Å
+--exam_empì— ì •ë³´ê°€ ì…ë ¥ë˜ë©´ ìë™ìœ¼ë¡œ examì— ë“±ë¡í•˜ëŠ” íŠ¸ë¦¬ê±°
 CREATE TRIGGER examin
 on exam_emp
-for insert -- after insert¿Í °°´Ù
+for insert -- after insertì™€ ê°™ë‹¤
 as
-insert exam (ºÎ¼­, ¼º¸í, ÇĞ·Â, ÀüÇü±¸ºĞ, ¼öÇè¹øÈ£)
-select ºÎ¼­, ¼º¸í, ÇĞ·Â, ÀüÇü±¸ºĞ, ¼öÇè¹øÈ£ from inserted --inserted¿¡ µ¥ÀÌÅÍ ÀÓ½Ã ÀúÀåÇÏ¿© °ªÀ» Àü´Ş
+insert exam (ë¶€ì„œ, ì„±ëª…, í•™ë ¥, ì „í˜•êµ¬ë¶„, ìˆ˜í—˜ë²ˆí˜¸)
+select ë¶€ì„œ, ì„±ëª…, í•™ë ¥, ì „í˜•êµ¬ë¶„, ìˆ˜í—˜ë²ˆí˜¸ from inserted --insertedì— ë°ì´í„° ì„ì‹œ ì €ì¥í•˜ì—¬ ê°’ì„ ì „ë‹¬
 
-insert exam_emp (ºÎ¼­, ¼º¸í, ÇĞ·Â, ÀüÇü±¸ºĞ, ¼öÇè¹øÈ£)values ('ºÎ¼­','È«±æµ¿','´ëÁ¹','¼ö½Ã',123456)
-insert exam_emp (¼º¸í, ¼öÇè¹øÈ£) values ('±è±æµ¿',12345)
+insert exam_emp (ë¶€ì„œ, ì„±ëª…, í•™ë ¥, ì „í˜•êµ¬ë¶„, ìˆ˜í—˜ë²ˆí˜¸)values ('ë¶€ì„œ','í™ê¸¸ë™','ëŒ€ì¡¸','ìˆ˜ì‹œ',123456)
+insert exam_emp (ì„±ëª…, ìˆ˜í—˜ë²ˆí˜¸) values ('ê¹€ê¸¸ë™',12345)
 
 select * from exam
 
@@ -1164,26 +1164,26 @@ select * from exam_emp
 
 create table testTrigger1
 (
-id int not null, ¼º¸í nchar(10), ÁÖ¼Ò nchar(10), »ı³â¿ù int
+id int not null, ì„±ëª… nchar(10), ì£¼ì†Œ nchar(10), ìƒë…„ì›” int
 )
 
 create table testTrigger2
 (
-¼º¸í nchar(10), »ı³â¿ù int
+ì„±ëª… nchar(10), ìƒë…„ì›” int
 )
 
 create trigger testT
 on testTrigger1
 for insert
 as
-insert testTrigger2(¼º¸í, »ı³â¿ù) select ¼º¸í, »ı³â¿ù from inserted
+insert testTrigger2(ì„±ëª…, ìƒë…„ì›”) select ì„±ëª…, ìƒë…„ì›” from inserted
 
-insert testTrigger1 values(1,'ÀÌ', '¼­¿ï',980521)
+insert testTrigger1 values(1,'ì´', 'ì„œìš¸',980521)
 select * from testTrigger1
 select * from testTrigger2
 
--- »ç¿ëÀÚ ÇÔ¼ö
---»ç¿ëÀÚ ÇÔ¼ö ¸¸µé±â
+-- ì‚¬ìš©ì í•¨ìˆ˜
+--ì‚¬ìš©ì í•¨ìˆ˜ ë§Œë“¤ê¸°
 create function fnDateGap (@a datetime, @b datetime)
 returns int
 as
@@ -1208,7 +1208,7 @@ return (@a + @b) / 2
 end
 
 select dbo.fnTest(1,19)
---»ç¿ëÀÚ ÇÔ¼ö ¼öÁ¤
+--ì‚¬ìš©ì í•¨ìˆ˜ ìˆ˜ì •
 alter function fnDateGap (@a int, @b datetime)
 returns datetime
 as
@@ -1219,42 +1219,42 @@ end
 select DATEADD(dd,3,'2019.05.21')
 select dbo.fnDateGap(3,'2019.05.21')
 
---»ç¿ëÀÚ ÇÔ¼ö »èÁ¦
+--ì‚¬ìš©ì í•¨ìˆ˜ ì‚­ì œ
 drop function fnDateGap
 
 
---Ä¿¼­
---Ä¿¼­ ¿¹Á¦ Å×ÀÌºí
+--ì»¤ì„œ
+--ì»¤ì„œ ì˜ˆì œ í…Œì´ë¸”
 
 CREATE TABLE MY_FRIEND(
 NAME NVARCHAR(20),
 AGE NUMERIC(3)
 )
 
-INSERT INTO MY_FRIEND(NAME,AGE)VALUES('È«±æµ¿',20)
-INSERT INTO MY_FRIEND(NAME,AGE)VALUES('È«±æ¼ø',25)
-INSERT INTO MY_FRIEND(NAME,AGE)VALUES('±èÃ¶¼ö',22)
-INSERT INTO MY_FRIEND(NAME,AGE)VALUES('±è¹Î¼ö',27)
+INSERT INTO MY_FRIEND(NAME,AGE)VALUES('í™ê¸¸ë™',20)
+INSERT INTO MY_FRIEND(NAME,AGE)VALUES('í™ê¸¸ìˆœ',25)
+INSERT INTO MY_FRIEND(NAME,AGE)VALUES('ê¹€ì² ìˆ˜',22)
+INSERT INTO MY_FRIEND(NAME,AGE)VALUES('ê¹€ë¯¼ìˆ˜',27)
 
------ Á¶È¸ÇÒ ÄÃ·³À» ´ãÀ» º¯¼ö ¼±¾ğ
+----- ì¡°íšŒí•  ì»¬ëŸ¼ì„ ë‹´ì„ ë³€ìˆ˜ ì„ ì–¸
 declare @name nchar(4), @age int
 
 
---Ä¿¼­¼±¾ğ
+--ì»¤ì„œì„ ì–¸
 declare cur cursor
 for
 select name,age from MY_FRIEND
 
---Ä¿¼­ ¿ÀÇÂ
+--ì»¤ì„œ ì˜¤í”ˆ
 open cur
 --select @@CURSOR_ROWS
 
---Ä¿¼­ fetch
+--ì»¤ì„œ fetch
 fetch next from cur into @name, @age
 --select @@FETCH_STATUS
 
 
-while @@FETCH_STATUS = 0 --@@FETCH_STATUS = 0 ÀÌ¸é °ªÀ» Á¤»óÀûÀ¸·Î °¡Á®¿È, -1ÀÌ¸é ½ÇÆĞ
+while @@FETCH_STATUS = 0 --@@FETCH_STATUS = 0 ì´ë©´ ê°’ì„ ì •ìƒì ìœ¼ë¡œ ê°€ì ¸ì˜´, -1ì´ë©´ ì‹¤íŒ¨
 begin
 update MY_FRIEND
 set AGE = @age + 1
@@ -1262,9 +1262,9 @@ where name = @name
 fetch next from cur into @name, @age
 end
 
-select @@FETCH_STATUS -- ¹İº¹¹® Á¾·á -1°ª Ç¥½Ã
-close cur -- Ä¿¼­ ´İ±â
-deallocate cur --Ä¿¼­ Á¾·á
+select @@FETCH_STATUS -- ë°˜ë³µë¬¸ ì¢…ë£Œ -1ê°’ í‘œì‹œ
+close cur -- ì»¤ì„œ ë‹«ê¸°
+deallocate cur --ì»¤ì„œ ì¢…ë£Œ
 
 select * from MY_FRIEND
 
@@ -1272,7 +1272,7 @@ select * from MY_FRIEND
 drop table testCursor
 create table testCursor
 (
-id int, ¾÷µ«°¡´É int
+id int, ì—…ëƒê°€ëŠ¥ int
 )
 
 declare @i int
@@ -1294,11 +1294,11 @@ select * from testCursor
 declare @idnum int, @up int
 declare testCur cursor
 for
-select id, ¾÷µ«°¡´É from testCursor
+select id, ì—…ëƒê°€ëŠ¥ from testCursor
 
 open testCur
 fetch next from testCur into @idnum, @up
-while @@FETCH_STATUS = 0 --@@FETCH_STATUS = 0 ÀÌ¸é °ªÀ» Á¤»óÀûÀ¸·Î °¡Á®¿È, -1ÀÌ¸é ½ÇÆĞ
+while @@FETCH_STATUS = 0 --@@FETCH_STATUS = 0 ì´ë©´ ê°’ì„ ì •ìƒì ìœ¼ë¡œ ê°€ì ¸ì˜´, -1ì´ë©´ ì‹¤íŒ¨
 begin
 update testCursor
 set id = @idnum + 10
@@ -1308,18 +1308,18 @@ fetch next from testCur into @idnum, @up
 end
 
 
-close testCur -- Ä¿¼­ ´İ±â
-deallocate testCur --Ä¿¼­ Á¾·á
+close testCur -- ì»¤ì„œ ë‹«ê¸°
+deallocate testCur --ì»¤ì„œ ì¢…ë£Œ
 
 select * from testCursor
 
---ÀüÃ¼ÅØ½ºÆ® »öÀÎ
---Ä«Å»·Î±× ¸¸µé±â
+--ì „ì²´í…ìŠ¤íŠ¸ ìƒ‰ì¸
+--ì¹´íƒˆë¡œê·¸ ë§Œë“¤ê¸°
 create fulltext catalog Cexam
--- ÀüÃ¼ ÅØ½ºÆ® ÀÎµ¦½º ¸¸µé±â
+-- ì „ì²´ í…ìŠ¤íŠ¸ ì¸ë±ìŠ¤ ë§Œë“¤ê¸°
 create fulltext index on Iexam
 (
 	mall_body LANGUAGE [korean]
 )
--- ÀÌ ¹öÀü¿¡¼­´Â ¿À·ù°¡ ¹ß»ı
+-- ì´ ë²„ì „ì—ì„œëŠ” ì˜¤ë¥˜ê°€ ë°œìƒ
 
