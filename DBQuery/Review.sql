@@ -1,4 +1,4 @@
-use Review
+ï»¿use Review
 select * from exam
 select * from exam_emp
 select * from neis
@@ -6,144 +6,144 @@ select * from zipcode
 
 sp_help exam
 alter table exam	
-alter column ºÎ¼­ nvarchar(10)
+alter column ë¶€ì„œ nvarchar(10)
 alter table exam
-alter column ¼º¸í  nvarchar(10)
+alter column ì„±ëª…  nvarchar(10)
 alter table exam
-alter column ÇĞ·Â  nvarchar(10)
+alter column í•™ë ¥  nvarchar(10)
 alter table exam
-alter column ¿µ¾î  tinyint
+alter column ì˜ì–´  tinyint
 alter table exam
-alter column ¼öÇĞ tinyint
+alter column ìˆ˜í•™ tinyint
 alter table exam
-alter column ÀüÇü±¸ºĞ nvarchar(10)
+alter column ì „í˜•êµ¬ë¶„ nvarchar(10)
 
 sp_help exam_emp
-select max(len(¼öÇè¹øÈ£)) as [¼öÇè¹øÈ£],max(len(ºÎ¼­))as ºÎ¼­,max(len(¼º¸í))as ¼º¸í,max(len(ÇÕ°İ¿©ºÎ))as ÇÕ°İ¿©ºÎ
-,max(len(ÁÖ¹Îµî·Ï¹øÈ£))as ÁÖ¹Îµî·Ï¹øÈ£,max(len(ÀüÇü±¸ºĞ))as ÀüÇü±¸ºĞ
-,max(len(Àû¿ë±¸ºĞ))as Àû¿ë±¸ºĞ,max(len(ÇĞ·Â))as ÇĞ·Â,max(len(º´¿ª))as º´¿ª,max(len(°í±³ÄÚµå))as °í±³ÄÚµå,
-max(len(°í±³Á¹¾÷ÀÏÀÚ))as °í±³Á¹¾÷ÀÏÀÚ,max(len(¿ìÆí¹øÈ£))as ¿ìÆí¹øÈ£
-,max(len(ÁÖ¼Ò))as ÁÖ¼Ò,max(len(ºñ»ó¿¬¶ôÃ³))as ºñ»ó¿¬¶ôÃ³,max(len(ÀüÈ­¹øÈ£))as ÀüÈ­¹øÈ£ from exam_emp
+select max(len(ìˆ˜í—˜ë²ˆí˜¸)) as [ìˆ˜í—˜ë²ˆí˜¸],max(len(ë¶€ì„œ))as ë¶€ì„œ,max(len(ì„±ëª…))as ì„±ëª…,max(len(í•©ê²©ì—¬ë¶€))as í•©ê²©ì—¬ë¶€
+,max(len(ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸))as ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸,max(len(ì „í˜•êµ¬ë¶„))as ì „í˜•êµ¬ë¶„
+,max(len(ì ìš©êµ¬ë¶„))as ì ìš©êµ¬ë¶„,max(len(í•™ë ¥))as í•™ë ¥,max(len(ë³‘ì—­))as ë³‘ì—­,max(len(ê³ êµì½”ë“œ))as ê³ êµì½”ë“œ,
+max(len(ê³ êµì¡¸ì—…ì¼ì))as ê³ êµì¡¸ì—…ì¼ì,max(len(ìš°í¸ë²ˆí˜¸))as ìš°í¸ë²ˆí˜¸
+,max(len(ì£¼ì†Œ))as ì£¼ì†Œ,max(len(ë¹„ìƒì—°ë½ì²˜))as ë¹„ìƒì—°ë½ì²˜,max(len(ì „í™”ë²ˆí˜¸))as ì „í™”ë²ˆí˜¸ from exam_emp
 
 alter table exam_emp
-alter column ¼öÇè¹øÈ£ nvarchar(10)
+alter column ìˆ˜í—˜ë²ˆí˜¸ nvarchar(10)
 alter table exam_emp
-alter column ºÎ¼­ nvarchar(10)
+alter column ë¶€ì„œ nvarchar(10)
 alter table exam_emp
-alter column ¼º¸í nvarchar(5)
+alter column ì„±ëª… nvarchar(5)
 alter table exam_emp
-alter column ÇÕ°İ¿©ºÎ nvarchar(5)
+alter column í•©ê²©ì—¬ë¶€ nvarchar(5)
 alter table exam_emp
-alter column ÁÖ¹Îµî·Ï¹øÈ£ nvarchar(10)
+alter column ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ nvarchar(10)
 alter table exam_emp
-alter column ÀüÇü±¸ºĞ nvarchar(5)
+alter column ì „í˜•êµ¬ë¶„ nvarchar(5)
 alter table exam_emp
-alter column Àû¿ë±¸ºĞ nvarchar(5)
+alter column ì ìš©êµ¬ë¶„ nvarchar(5)
 alter table exam_emp
-alter column ÇĞ·Â nvarchar(4)
+alter column í•™ë ¥ nvarchar(4)
 alter table exam_emp
-alter column º´¿ª nvarchar(2)
+alter column ë³‘ì—­ nvarchar(2)
 alter table exam_emp
-alter column °í±³ÄÚµå nvarchar(10)
+alter column ê³ êµì½”ë“œ nvarchar(10)
 alter table exam_emp
-alter column °í±³Á¹¾÷ÀÏÀÚ smalldatetime
+alter column ê³ êµì¡¸ì—…ì¼ì smalldatetime
 alter table exam_emp
-alter column ¿ìÆí¹øÈ£ nvarchar(6)
+alter column ìš°í¸ë²ˆí˜¸ nvarchar(6)
 alter table exam_emp
-alter column ÁÖ¼Ò nvarchar(30)
+alter column ì£¼ì†Œ nvarchar(30)
 alter table exam_emp
-alter column ÀüÈ­¹øÈ£ nvarchar(20)
+alter column ì „í™”ë²ˆí˜¸ nvarchar(20)
 alter table exam_emp
-alter column ºñ»ó¿¬¶ôÃ³ nvarchar(20)
+alter column ë¹„ìƒì—°ë½ì²˜ nvarchar(20)
 
 sp_help neis
-select max(len(ÇĞ±³ÄÚµå)) as ÇĞ±³ÄÚµå,max(len(½Ãµµ±³À°Ã»)) as ½Ãµµ±³À°Ã»,max(len(ÇĞ±³¾à¾î¸í)) as ÇĞ±³¾à¾î¸í,max(len(ÇĞ±³¸í)) as ÇĞ±³¸í,
-max(len(¿ìÆí¹øÈ£)) as ¿ìÆí¹øÈ£,max(len(ÁÖ¼Ò)) as ÁÖ¼Ò,max(len(ÀüÈ­¹øÈ£)) as ÀüÈ­¹øÈ£ from neis
+select max(len(í•™êµì½”ë“œ)) as í•™êµì½”ë“œ,max(len(ì‹œë„êµìœ¡ì²­)) as ì‹œë„êµìœ¡ì²­,max(len(í•™êµì•½ì–´ëª…)) as í•™êµì•½ì–´ëª…,max(len(í•™êµëª…)) as í•™êµëª…,
+max(len(ìš°í¸ë²ˆí˜¸)) as ìš°í¸ë²ˆí˜¸,max(len(ì£¼ì†Œ)) as ì£¼ì†Œ,max(len(ì „í™”ë²ˆí˜¸)) as ì „í™”ë²ˆí˜¸ from neis
 alter table neis
-alter column ÇĞ±³ÄÚµå nvarchar(10)
+alter column í•™êµì½”ë“œ nvarchar(10)
 alter table neis
-alter column ½Ãµµ±³À°Ã» nvarchar(5)
+alter column ì‹œë„êµìœ¡ì²­ nvarchar(5)
 alter table neis
-alter column ÇĞ±³¾à¾î¸í nvarchar(25)
+alter column í•™êµì•½ì–´ëª… nvarchar(25)
 alter table neis
-alter column ÇĞ±³¸í nvarchar(25)
+alter column í•™êµëª… nvarchar(25)
 alter table neis
-alter column ¿ìÆí¹øÈ£ nvarchar(6)
+alter column ìš°í¸ë²ˆí˜¸ nvarchar(6)
 alter table neis
-alter column ÁÖ¼Ò nvarchar(40)
+alter column ì£¼ì†Œ nvarchar(40)
 alter table neis
-alter column ÀüÈ­¹øÈ£ nvarchar(15)
+alter column ì „í™”ë²ˆí˜¸ nvarchar(15)
 
 sp_help zipcode
 
---ÄÃ·³Á¦¸ñ ¹Ù²Ù±â
-select zipcode as [¿ìÆí¹øÈ£], sido as [½Ãµµ], GUGUN as [±¸], DONG as [µ¿] from zipcode
+--ì»¬ëŸ¼ì œëª© ë°”ê¾¸ê¸°
+select zipcode as [ìš°í¸ë²ˆí˜¸], sido as [ì‹œë„], GUGUN as [êµ¬], DONG as [ë™] from zipcode
 
 --isnull
-select isnull(ÇÕ°İ¿©ºÎ,0) from exam_emp
+select isnull(í•©ê²©ì—¬ë¶€,0) from exam_emp
 
 --group by
-select b.ºÎ¼­, count(*) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-where a.¿µ¾î >= 60 and a.¼öÇĞ >= 60
-group by b.ºÎ¼­
+select b.ë¶€ì„œ, count(*) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+where a.ì˜ì–´ >= 60 and a.ìˆ˜í•™ >= 60
+group by b.ë¶€ì„œ
 
 
 --rollup
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ, avg(¿µ¾î),AVG(¼öÇĞ) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ºÎ¼­,b.ÀüÇü±¸ºĞ
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„, avg(ì˜ì–´),AVG(ìˆ˜í•™) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„
 with rollup
 
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ, avg(¿µ¾î),AVG(¼öÇĞ) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ÀüÇü±¸ºĞ,b.ºÎ¼­
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„, avg(ì˜ì–´),AVG(ìˆ˜í•™) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ì „í˜•êµ¬ë¶„,b.ë¶€ì„œ
 with rollup
 
 --cube
-select b.ºÎ¼­,b.ÀüÇü±¸ºĞ, avg(¿µ¾î),AVG(¼öÇĞ) from exam a join exam_emp b
-on a.¼º¸í = b.¼º¸í
-group by b.ÀüÇü±¸ºĞ,b.ºÎ¼­
+select b.ë¶€ì„œ,b.ì „í˜•êµ¬ë¶„, avg(ì˜ì–´),AVG(ìˆ˜í•™) from exam a join exam_emp b
+on a.ì„±ëª… = b.ì„±ëª…
+group by b.ì „í˜•êµ¬ë¶„,b.ë¶€ì„œ
 with cube
 
---»ó°üÇÏÀÇ ÁúÀÇ
-select ¼º¸í from exam
-where ¼º¸í not in (select ¼º¸í from exam_emp where ¼º¸í = exam.¼º¸í)
+--ìƒê´€í•˜ì˜ ì§ˆì˜
+select ì„±ëª… from exam
+where ì„±ëª… not in (select ì„±ëª… from exam_emp where ì„±ëª… = exam.ì„±ëª…)
 
 --union
-select ¼º¸í from exam
-group by ¼º¸í
+select ì„±ëª… from exam
+group by ì„±ëª…
 union
-select ¼º¸í from exam_emp
-group by ¼º¸í
+select ì„±ëª… from exam_emp
+group by ì„±ëª…
 
---Å×ÀÌºí¸¸µé±â
+--í…Œì´ë¸”ë§Œë“¤ê¸°
 create table test.tst1(
  id int
 )
 
 
 
--- Å×ÀÌºí ¼öÁ¤
+-- í…Œì´ë¸” ìˆ˜ì •
 alter table test.tst1
-add ¼º¸í nvarchar(5)
+add ì„±ëª… nvarchar(5)
 
 alter table test.tst1
-drop column ¼º¸í
+drop column ì„±ëª…
 
 alter table test.tst1
 add id int identity(1,1) primary key
 
 alter table test.tst1
-add  ¼º¸í nvarchar(5) default('È«±æµ¿')
+add  ì„±ëª… nvarchar(5) default('í™ê¸¸ë™')
 
--- µ¥ÀÌÅÍ ¼öÁ¤
+-- ë°ì´í„° ìˆ˜ì •
 insert test.tst1 values(default)
 select * from test.tst1
 
 begin tran
 update test.tst1
-set ¼º¸í = '±è±æµ¿'
+set ì„±ëª… = 'ê¹€ê¸¸ë™'
 where id = 5
 select * from test.tst1
 commit
@@ -154,41 +154,41 @@ where id > 5
 select * from test.tst1
 commit
 
---±âº»Å°
---°íÀ¯Á¦¾àÅ°
+--ê¸°ë³¸í‚¤
+--ê³ ìœ ì œì•½í‚¤
 create table test.People(
-id int identity(1,1) primary key, ¼º¸í nvarchar(10) not null,
-ÁÖ¹Î¹øÈ£ char(13) unique check(SUBSTRING(ÁÖ¹Î¹øÈ£,7,1) in (1,2,3,4) ),
-µµ½Ã nvarchar(10) default '¼­¿ï'
+id int identity(1,1) primary key, ì„±ëª… nvarchar(10) not null,
+ì£¼ë¯¼ë²ˆí˜¸ char(13) unique check(SUBSTRING(ì£¼ë¯¼ë²ˆí˜¸,7,1) in (1,2,3,4) ),
+ë„ì‹œ nvarchar(10) default 'ì„œìš¸'
 )
 
-insert test.People values('È«±æµ¿','9901011234567',default)
+insert test.People values('í™ê¸¸ë™','9901011234567',default)
 select * from test.People
-insert test.People values('±è±æµ¿','9901012234567',default)
-insert test.People values('±è±æµ¿','0001012334567',default)
-insert test.People values('±è±æµ¿','0001012534567',default)
-insert test.People values('±è±æµ¿','0001015534567',default)
+insert test.People values('ê¹€ê¸¸ë™','9901012234567',default)
+insert test.People values('ê¹€ê¸¸ë™','0001012334567',default)
+insert test.People values('ê¹€ê¸¸ë™','0001012534567',default)
+insert test.People values('ê¹€ê¸¸ë™','0001015534567',default)
 
 create rule rcity
 as
-@city in ('¼­¿ï', '´ëÀü', '´ë±¸', 'ºÎ»ê', 'ÀÎÃµ','±¤ÁÖ','Á¦ÁÖ')
+@city in ('ì„œìš¸', 'ëŒ€ì „', 'ëŒ€êµ¬', 'ë¶€ì‚°', 'ì¸ì²œ','ê´‘ì£¼','ì œì£¼')
 
-sp_bindrule rcity, 'test.People.µµ½Ã'
+sp_bindrule rcity, 'test.People.ë„ì‹œ'
 
-insert test.People values('±è±æµ¿','0001013534567','´ëÀü')
-insert test.People values('±è±æµ¿','0001013534567','¼­»ê')
+insert test.People values('ê¹€ê¸¸ë™','0001013534567','ëŒ€ì „')
+insert test.People values('ê¹€ê¸¸ë™','0001013534567','ì„œì‚°')
 select * from test.People
 
 
---ÂüÁ¶Å°
+--ì°¸ì¡°í‚¤
 sp_help 'test.People'
 
 create table test.CityNumber
 (
 Cityid int,
-µµ½Ã nvarchar(10) not null
+ë„ì‹œ nvarchar(10) not null
 )
-sp_bindrule rcity, 'test.CityNumber.µµ½Ã'
+sp_bindrule rcity, 'test.CityNumber.ë„ì‹œ'
 
 alter table test.CityNumber
 alter column Cityid int not null
@@ -197,27 +197,27 @@ add constraint PK_Cityid primary key(Cityid)
 
 
 alter table test.CityNumber
-add constraint UK_City unique(µµ½Ã)
+add constraint UK_City unique(ë„ì‹œ)
 sp_help 'test.CityNumber'
 
-insert test.CityNumber values(01,'¼­¿ï')
-insert test.CityNumber values(02,'ºÎ»ê')
-insert test.CityNumber values(03,'ÀÎÃµ')
-insert test.CityNumber values(04,'´ëÀü')
-insert test.CityNumber values(05,'´ë±¸')
-insert test.CityNumber values(06,'±¤ÁÖ')
-insert test.CityNumber values(07,'Á¦ÁÖ')
+insert test.CityNumber values(01,'ì„œìš¸')
+insert test.CityNumber values(02,'ë¶€ì‚°')
+insert test.CityNumber values(03,'ì¸ì²œ')
+insert test.CityNumber values(04,'ëŒ€ì „')
+insert test.CityNumber values(05,'ëŒ€êµ¬')
+insert test.CityNumber values(06,'ê´‘ì£¼')
+insert test.CityNumber values(07,'ì œì£¼')
 
 select * from test.CityNumber
 order by Cityid asc
 
 create table test.People2
 (
-id int identity(1,1) primary key, ¼º¸í nvarchar(10) not null,
-ÁÖ¹Î¹øÈ£ char(13) unique check(SUBSTRING(ÁÖ¹Î¹øÈ£,7,1) in (1,2,3,4) ),
+id int identity(1,1) primary key, ì„±ëª… nvarchar(10) not null,
+ì£¼ë¯¼ë²ˆí˜¸ char(13) unique check(SUBSTRING(ì£¼ë¯¼ë²ˆí˜¸,7,1) in (1,2,3,4) ),
 CityId int
 ,
-µµ½Ã nvarchar(10) default '¼­¿ï'
+ë„ì‹œ nvarchar(10) default 'ì„œìš¸'
 )
 
 alter table test.People2
@@ -226,20 +226,30 @@ references test.CityNumber (Cityid)
 on update cascade
 on delete cascade
 
-insert test.People2 values('È«±æµ¿','9901011234567',1,default)
-insert test.People2 values('±è±æµ¿','9801011234567',2,default)
-insert test.People2 values('¹Ú±æµ¿','8801011234567',2,'ºÎ»ê')
-insert test.People2 values('È«±æµ¿','7801011234567',2,'´ëÀü')
-insert test.People2 values('ÀÌ±æµ¿','9701011234567',8,default)
+insert test.People2 values('í™ê¸¸ë™','9901011234567',1,default)
+insert test.People2 values('ê¹€ê¸¸ë™','9801011234567',2,default)
+insert test.People2 values('ë°•ê¸¸ë™','8801011234567',2,'ë¶€ì‚°')
+insert test.People2 values('í™ê¸¸ë™','7801011234567',2,'ëŒ€ì „')
+insert test.People2 values('ì´ê¸¸ë™','9701011234567',8,default)
 select * from test.People2
 
 
 
 select * from test.People2
-where µµ½Ã not in (select µµ½Ã from test.CityNumber where test.People2.Cityid = test.CityNumber.Cityid)
+where ë„ì‹œ not in (select ë„ì‹œ from test.CityNumber where test.People2.Cityid = test.CityNumber.Cityid)
 
---µ¥ÀÌÅÍ »ğÀÔ ½Ã µµ½Ã ÄÚµå °Ë»çÇÏ±â
+--ë°ì´í„° ì‚½ì… ì‹œ ë„ì‹œ ì½”ë“œ ê²€ì‚¬í•˜ê¸°
+create table test.People3
+(
+id int identity(1,1) primary key, ì„±ëª… nvarchar(10) not null,
+ì£¼ë¯¼ë²ˆí˜¸ char(13) unique check(SUBSTRING(ì£¼ë¯¼ë²ˆí˜¸,7,1) in (1,2,3,4) ),
+CityId int
+,
+ë„ì‹œ nvarchar(10) default 'ì„œìš¸' check (ë„ì‹œ in (select ë„ì‹œ from test.CityNumber where test.People2.Cityid = test.CityNumber.Cityid))
+)
+-- rule ë§Œë“¤ ë•Œ city id ì½ì§€ ëª»í•¨. ã…¡ã…¡
 create rule CheckCity
 as
-@id = i
-@Cityname not in (select µµ½Ã from test.CityNumber where test.People2.Cityid = ÀÔ·ÂµÈid°ª)
+@city
+--------------- ì•Šëœë‹¤. ë‹¤ë¥¸ ì–¸ì–´ë¡œ í”„ë¡œê·¸ë˜ë°í•´ì•¼ í•  ê²ƒ ê°™ë‹¤.
+
