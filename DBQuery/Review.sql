@@ -226,6 +226,7 @@ references test.CityNumber (Cityid)
 on update cascade
 on delete cascade
 
+
 insert test.People2 values('홍길동','9901011234567',1,default)
 insert test.People2 values('김길동','9801011234567',2,default)
 insert test.People2 values('박길동','8801011234567',2,'부산')
@@ -253,3 +254,24 @@ as
 @city
 --------------- 않된다. 다른 언어로 프로그래밍해야 할 것 같다.
 
+--case
+select 성명,
+case
+when 영어>=90 and 수학 >= 90 then 'A'
+when 영어>=80 and 수학 >= 80 then 'B'
+when 영어>=70 and 수학 >= 70 then 'C'
+when 영어>=60 and 수학 >= 60 then 'D'
+else '불합격'
+end as '등급'
+,영어, 수학
+from exam
+
+--nullif
+select nullif(2,3) -- 다르면 2 출력
+select nullif(3,3) -- 같으면 null 출력
+
+--coalesce
+select coalesce(null, 1, 3) -- 처음으로 널이 아닌 것 출력
+select coalesce(null, 3, 1)
+select coalesce(3,null, 1)
+select coalesce(1,null, 3)
