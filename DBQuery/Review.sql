@@ -275,3 +275,60 @@ select coalesce(null, 1, 3) -- 처음으로 널이 아닌 것 출력
 select coalesce(null, 3, 1)
 select coalesce(3,null, 1)
 select coalesce(1,null, 3)
+
+
+
+--색인
+------ primary key 설정 시 기본으로 클러스터 인덱스가 생성된다.
+
+exec sp_help exam_emp;
+
+select * from exam_emp
+
+alter table exam_emp 
+alter column 수험번호 nvarchar(20) not null
+
+alter table exam_emp
+add constraint PK_수험번호 primary key(수험번호)
+
+exec sp_helpindex exam_emp;
+
+
+----- unique key 설정 시 기본으로 넌 클러스터 인덱스가 생성된다.
+create table test.tst4
+(
+a int primary key nonclustered,
+b int unique
+)
+
+exec sp_helpindex 'test.tst4';
+
+
+--예제
+create table test.usertbl
+(
+userID char(8) not null primary key,
+name nvarchar(10) not null,
+birthYear int not null,
+addr nchar(2) not null
+)
+insert into test.usertbl values('LSG', '이승기', 1987, '서울')
+insert into test.usertbl values('KBS', '김범수', 1979, '경남')
+insert into test.usertbl values('KKH', '김경호', 1971, '전남')
+insert into test.usertbl values('JYP', '조용필', 1950, '경기')
+insert into test.usertbl values('SSK', '성시경', 1979, '서울')
+select * from test.usertbl -------------primary key가 클러스터 인덱스로 설정되서 userID가 정렬 됨.
+
+
+
+----------------색인은 B Tree 구조로 됨.
+----------------클러스터는 넌클러스터에 비해 데이터를 삭제, 수정, 추가하면 느리다.
+----------------클러스터는 넌클러스터 보다 검색 속도가 빠르다.
+----------------강의 : https://www.youtube.com/watch?v=3y6HAcqBz2c&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=26
+----------------강의 : https://www.youtube.com/watch?v=jRmt2wCx0X4&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=27
+----------------강의 : https://www.youtube.com/watch?v=sSOsWoaTrNk&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=28
+----------------강의 : https://www.youtube.com/watch?v=wzHuooBh17M&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=29
+
+----------------테이블 스캔을 할 지 인덱스 스캔을 할 지는 sql 서버가 알아서 결정한다.
+----------------인덱스를 만들었는데 sql서버가 테이블 스캔을 사용하면 만들었던 인덱스는 삭제하는 것이 좋다.
+----------------수정, 삽입, 삭제가 많으면 인덱스를 안만들면 좋다.
