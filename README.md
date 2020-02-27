@@ -65,7 +65,7 @@ DB 공부하는 곳
   * 유뷰브 (https://www.youtube.com/watch?v=wzHuooBh17M&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=29)
 ---
 
-### 20.02.21(금)
+### 20.02.27(목)
 
 * **12. 트랜잭션(1) ~ 13. 트랜잭션(2)**
   * 복습  
