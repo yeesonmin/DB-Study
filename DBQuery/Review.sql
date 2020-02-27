@@ -332,3 +332,56 @@ select * from test.usertbl -------------primary key가 클러스터 인덱스로
 ----------------테이블 스캔을 할 지 인덱스 스캔을 할 지는 sql 서버가 알아서 결정한다.
 ----------------인덱스를 만들었는데 sql서버가 테이블 스캔을 사용하면 만들었던 인덱스는 삭제하는 것이 좋다.
 ----------------수정, 삽입, 삭제가 많으면 인덱스를 안만들면 좋다.
+
+
+--트랜잭션
+-- 시스템 오류나 외부 고장으로부터 DB의 상태를 완전한 상태(데이터 수정 전 상태나 데이터 수정 상태)로 유지한다.
+-- 하나의 논리적 작업단위로 수행
+
+-- 업데이트나 삽입 등 데이터 조작이 일어날 때 시스템에서 자동으로 begin tran, commit을 사용한다.(자동 트랜잭션)
+-- 임의로 begin tran, commit을 사용할 수 있다.(명시적 트랜잭션)
+select * from test.tst1
+
+---시스템에서 자동으로 begin tran, commit 수행
+update test.tst1
+set 성명 = '이길동'
+where id = 1
+select * from test.tst1
+
+
+
+-- 임의로 begin tran, commit 수행
+begin tran
+update test.tst1
+set 성명 = '이길동'
+where id = 2
+select * from test.tst1 -- 이길동으로 바뀜
+select @@TRANCOUNT -- 1로 표시
+rollback
+
+select * from test.tst1 -- 홍길동으로 바뀜
+select @@TRANCOUNT -- 0으로 표시
+
+begin tran
+update test.tst1
+set 성명 = '이길동'
+where id = 2
+select * from test.tst1 -- 이길동으로 바뀜
+select @@TRANCOUNT -- 1로 표시
+commit
+
+select * from test.tst1 -- 홍길동으로 바뀜
+select @@TRANCOUNT -- 0으로 표시
+
+
+--begin try, begin catch
+begin try
+	begin tran
+		update test.tst1 set 성명 = '이길동' where id = 1
+		update test.tst1 set 성명 = '김길동' where id = 15
+	commit
+end try
+begin catch
+	rollback
+end catch
+--------------- 실행문에 오류가 발생 시 롤백 수행
