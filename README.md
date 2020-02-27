@@ -10,7 +10,7 @@ DB 공부하는 곳
 ## 현재 상태
 * Microsoft 전문가로 가는 지름길 SQL Sever2000(마무리)
 * 인터넷에서 SQL내용 찾아서 공부 중
-* Microsoft 전문가로 가는 지름길 SQL Sever2000 책 복습 중
+* Microsoft 전문가로 가는 지름길 SQL Sever2000 책 복습 중(78%)
 
 제목|페이지|공부한 페이지|복습한 페이지
 ---|---|---|---
@@ -25,15 +25,15 @@ DB 공부하는 곳
 |9. SQL 고급	|19|19|19
 |10. 색인1	|20|20|20
 |11. 색인2	|11|11|11
-|12. 트랜잭션(1)	|11|11|0
-|13. 트랙잭션2	|13|13|0
+|12. 트랜잭션(1)	|11|11|11
+|13. 트랙잭션2	|13|13|13
 |14. 뷰	|19|19|0
 |15. 저장 프로시저	|18|18|0
 |16. 트리거	|13|13|0
 |17. 사용자 정의 함수	|6|6|0
 |18. 커서	|13|13|0
 |19. 전체 덱스트 색인	|6|6|0
-|**총 합계**|**344**|**344**|**245**
+|**총 합계**|**344**|**344**|**269**
 
 
 ---
@@ -64,3 +64,12 @@ DB 공부하는 곳
   * 유뷰브 (https://www.youtube.com/watch?v=sSOsWoaTrNk&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=28)
   * 유뷰브 (https://www.youtube.com/watch?v=wzHuooBh17M&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=29)
 ---
+
+### 20.02.21(금)
+
+* **12. 트랜잭션(1) ~ 13. 트랜잭션(2)**
+  * 복습  
+  * 유뷰브(https://www.youtube.com/watch?v=6i0lVnVBd0U&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=30)
+  * 유뷰브(https://www.youtube.com/watch?v=rAgt_f9pj_o&list=PLVsNizTWUw7Gw_ubikxbzecfveoxemsAs&index=31)
+---
+
